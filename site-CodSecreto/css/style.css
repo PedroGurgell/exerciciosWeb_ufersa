@@ -15,13 +15,22 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     grid-template-areas:
-    "content content content content content content content content content";
+    "content content content content content content content content content"
+    "img img img img img img img img img";
 }
 .content{
     display: grid;
     grid-area: content;
     grid-gap: 10px;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+img{
+    margin: 0 auto;
+    grid-area: img;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    width: 500px;
+    height: 400px;
+    animation: fadeIn 3s ease-in-out;
 }
 .col{
     padding: 10px;
