@@ -21,10 +21,10 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 .col{
-    animation: fadeIn 3s ease-in-out;
     padding: 10px;
     min-height: 150px;
     line-height: 150px;
+    animation: fadeIn 3s ease-in-out;
     font-size: 100px;
     color: rgb(30, 30, 30);
     font-family:fantasy;
