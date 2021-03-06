@@ -28,8 +28,8 @@ img{
     margin: 0 auto;
     grid-area: img;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    width: 500px;
-    height: 400px;
+    width: 40%;
+    height: 60%;
     animation: fadeIn 3s ease-in-out;
 }
 .col{
