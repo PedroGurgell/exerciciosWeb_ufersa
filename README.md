@@ -1,5 +1,8 @@
-# Repositório da disciplina de programação web
-
- Repositório para as aulas praticas da disciplina de programação web.
-
-- Aula 1: Criação de um index.html com um código secreto em um meta dado do documento.
+# Repositório da disciplina de programação web :open_file_folder:
+ Repositório para as aulas práticas da disciplina de programação web.
+***
+### Aula 1: Criação de um index.html com um código secreto em um meta dado no documento.
+- [x] Criar arquivo index.html
+- [x] Insirir uma TAG meta no head do site com um código secreto
+- [x] Insirir uma uma imagem no body do site.
+- [x] Deixar responsivo 
