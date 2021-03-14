@@ -1,0 +1,92 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Segoe UI';
+}
+
+.conteiner{
+    width: 100%;
+    height:100%;
+}
+.header{
+    padding: 20px 0;
+    text-align: center;
+    background-color: #4B0082;
+    color: white;
+}
+.menu-desktop{
+    width: 60%;
+    overflow: hidden;
+    background-color:#4B0082;
+    position: fixed;
+    text-align: center;
+    left: 20%;
+    bottom: 0;
+    border-radius: 50px 50px 0 0;
+    box-shadow: 2px 2px 12px 3px rgba(0,0,0,0.3);
+}
+.menu-desktop ul{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.menu-desktop ul a{
+    width: 17%;
+    text-decoration: none;
+}
+.menu-desktop ul li{
+    width: 100%;
+    height:100%;
+    padding: 10px 0;
+    color:white;
+    text-decoration: none;
+    list-style-type: none;
+}
+.menu-desktop ul li:hover{
+    background-color:#631d96;
+}
+.menu-desktop ul li h3{
+    font-size: 14px;
+}
+.presentation{
+    width: 100%;
+    height: 580px;
+    display: flex;
+    padding: 100px 0;
+    background-image: url(../images/background-image.jpg);
+    background-size: cover;
+    background-position: center;
+
+}
+
+.wrap25{
+    background-color:rgba(0,0,0, 0.3);
+    width: 25%;
+    padding: 60px 0;
+    margin:0 2%;
+    text-align: center;
+}
+.wrap7{
+    width:7.5%;
+    height:90px;
+    margin-top:155px;
+    text-align: center;
+}
+
+.wrap25 .symbol{
+    max-width: 200px;
+    height: 175px;
+}
+.wrap25 .symbol img{
+    width:100%;
+}
+.wrap25 .title{
+    margin-top: 30px;
+    font-size: 1.5vw;
+    color: white;
+}
+.wrap7 i{
+    font-size: 7vw;
+    color: white;
+}
