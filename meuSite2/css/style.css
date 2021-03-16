@@ -186,7 +186,7 @@ section.news .title-news{
     <<< noticias
 */
 /*
-    Sobre >>>
+    sobre >>>
 */
 .info{
     width: 100%;
@@ -216,8 +216,125 @@ section.news .title-news{
     margin-bottom: 25px;
 }
 /*
-    <<< Sobre
+    <<< sobre
+*/
+/*
+    adicionarPessoa >>>
 */
 
+section.register-form h2{
+    width: 100%;
+    padding:30px 0;
+    text-align: center;
+    font-size:35px;
+    margin-top: 20px;
+    background-color: white;
+    color:#4B0082;
+    border-top: 3px solid #4B0082 ;
+}
+.content-form{
+    width: 100%;
+    max-width:720px;
+    height: 700px;
+    background-color: white;
+    box-shadow: 3px 3px 12px 4px rgba(0,0,0,0.3);
+}
+.form{
+    padding: 0 30px;
+    margin-top: 30px;
+}
+.content-form .form-wraper label, .form-gender  span{
+   display: block;
+   width: 100%;
+   font-size: 20px;
+   margin: 10px 0;
+   color:#4B0082;
+}
+
+.content-form .form-wraper input{
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 10px;
+    border-radius: 5px;
+    font-size:18px;
+    color: #555;
+    border: 2px solid #ccc;
+}
+.content-form .form-wraper input[type=date]{
+    width: 50%;
+    color:#555;
+}
+.content-form .form-wraper input:focus{
+    outline-color:#b385d4;
+    
+}
+.content-form .form-wraper input::placeholder {
+    color: #ccc; 
+}
+.content-form .form-gender label{
+    font-size:16px;
+    color: #555;
+}
+
+.content-form input[type='radio']:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -3px;
+    left: -3px;
+    position: relative;
+    background-color: #b385d4;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+
+.form-buttom{
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+.content-buttom{
+    border: 1px solid white;
+    width: 200px;
+    height:50px;
+    border-radius: 100px 0;
+    background-color: #222;
+    box-shadow: 2px 2px 12px 3px rgba(0,0,0,0.3);
+}
+
+.form-buttom input[type=submit]{
+    width: 70%;
+    height: 100%;
+    font-size: 20px;
+    line-height: 30px;
+    border-radius:100px 0;
+    color: white;
+    background-color: #4B0082;
+    border: 2px solid #ccc; cursor: pointer;
+}
+.form-buttom input[type=reset]{
+    width: 27.8%;
+    padding-left: 12px;
+    height: 85%;
+    border: 0;
+    line-height: 40px;
+    border-radius:100px 0 0;
+    color: #aaa;
+    background-color: transparent; cursor: pointer;
+}
+
+.form-buttom input[type=submit], .form-buttom input[type=reset]:focus{
+    outline: none;
+}
+.form-buttom input[type=submit]:hover{
+    background-color:#631d96;
+}
+
+/*
+    <<< adicionarPessoa
+*/
 
 

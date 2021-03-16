@@ -17,7 +17,7 @@
         </div>
         <nav class="menu-desktop">
             <ul>
-                <a href="index.html" style="background-color: #631d96;"><li>
+                <a href="index.html"><li>
                     <i class="fas fa-home"></i>
                     <h3>Inicio</h3>
                 </li></a>
@@ -26,8 +26,8 @@
                     <h3>Canais de noticias</h3>
                 </li></a>
                 
-                <a href="adicionarPessoa.html"><li>
-                    <i class="fas fa-user-plus"></i>
+                <a href=""><li>
+                    <i class="fas fa-user-plus" style="background-color: #631d96;"></i>
                     <h3>Adicionar pessoas</h3>
                 </li></a>
 
@@ -50,7 +50,7 @@
 
         <nav class="menu-moblile" style="display: none;">
             <ul>
-                <a href="index.html" style="background-color: #631d96;"><li>
+                <a href="index.html"><li>
                     <i class="fas fa-newspaper"></i>
                     <h3>Inicio</h3>
                 </li></a>
@@ -60,7 +60,7 @@
                 </li></a>
                 
                 <a href="adicionarPessoa.html"><li>
-                    <i class="fas fa-user-plus"></i>
+                    <i class="fas fa-user-plus" style="background-color: #631d96;"></i>
                     <h3>Adicionar pessoas</h3>
                 </li></a>
 
@@ -81,32 +81,46 @@
             </ul>
         </nav><!--menu-moblile-->
 
-        <section class="presentation">
-            <div class="wrap25">
-                <div class="symbol">
-                    <img src="images/front-end.png" alt="Front-end">
-                </div>
-                <div class="title"><h2>Front-end</h2></div>
+        <section class="register-form">
+            <div class="content-form">
+                <h2>Formulário para cadastro</h2>
+                <form action="" class="form">
+                    <div class="form-wraper">
+                    <label for="">Nome Completo*:</label>
+                    <input type="text" name="name" placeholder="Nome completo" required>
+                    </div>
+
+                    <div class="form-wraper">
+                        <label for="">E-mail*:</label>
+                        <input type="text" name="email" placeholder="nome@dominio.com" required>
+                    </div>
+
+                    <div class="form-wraper">
+                    <label for="">Data de nascimento*:</label>
+                    <input type="date" name="date" required>
+                    </div>
+
+                    <div class="form-gender">
+                        <span for="">Sexo*:</span>
+                        <input type="radio" id="male" name="gender">
+                        <label for="male">Homem</label><br>
+                        <input type="radio" id="female" name="gender">
+                        <label for="female">Mulher</label><br>
+                        <input type="radio" id="not-info-gender" name="gender">
+                        <label for="not-info-gender">Não informar</label>
+                    </div>
+                    <div class="form-buttom">
+                        <div class="content-buttom">
+                            <input type="reset" value="Reset">
+                            <input type="submit" value="Cadastrar">
+                        </div>
+
+                    </div>
+                </form>
             </div>
-            <div class="wrap7">
-                <div><i class="fas fa-plus"></i></div>
-            </div>
-            <div class="wrap25">
-                <div class="symbol">
-                    <img src="images/back-end.png" alt="">
-                </div>
-                <div class="title"><h2>Back-end</h2></div>
-            </div>
-            <div class="wrap7">
-                <div><i class="fas fa-plus"></i></div>
-            </div>
-            <div class="wrap25">
-                <div class="symbol">
-                    <img src="images/bd.png" alt="">
-                </div>
-                <div class="title"><h2>Banco de dados</h2></div>
-            </div>
-        </section><!--presetation-->
+            
+
+        </section><!--register-from-->
         
     </div><!--container-->
 
