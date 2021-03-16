@@ -22,6 +22,7 @@
     overflow: hidden;
     background-color:#4B0082;
     position: fixed;
+    z-index: 17;
     text-align: center;
     left: 20%;
     bottom: 0;
@@ -112,6 +113,7 @@
 */
 section.news{
     max-width:1280px;
+    height: 600px;
     padding: 30px 40px;
 }
 section.news .title-news{
@@ -283,7 +285,7 @@ section.register-form h2{
     border-radius: 15px;
     top: -3px;
     left: -3px;
-    position: relative;
+    position:relative;
     background-color: #b385d4;
     content: '';
     display: inline-block;
@@ -336,5 +338,53 @@ section.register-form h2{
 /*
     <<< adicionarPessoa
 */
+/*
+    contato >>>
+*/
+.contact{
+    max-width: 1280px;
+    height:600px;
+    text-align: center;
+    padding: 30px 0;
+}
+.contact h2{
+    margin-bottom: 5px;
+}
+.contact p{
+    margin-bottom: 20px;
+}
+.contact h2{
+        width: 50%;
+        text-align: center;
+        font-size:35px;
+        background-color: white;
+        color:#4B0082;
+}
+.contact a{
+        display: block;
+        height: 100%;
+        width: 100%;
+        text-decoration: none;
 
+}
+.contact .contact-button{
+    width: 100px;
+    height: 100px;
+    border-radius:100px;
+    background-color:#4B0082;
+    line-height:110px;
+    box-shadow: 3px 3px 12px 4px rgba(0,0,0,0.2);
+}
+.contact .contact-button:hover{
+    background-color: #631d96;
+}
+.contact i{
+    font-size: 45px;
+    color:white;
+}
+
+
+/*
+    <<< contato
+*/
 

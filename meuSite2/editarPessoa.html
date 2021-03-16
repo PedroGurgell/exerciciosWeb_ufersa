@@ -7,7 +7,7 @@
     <meta codigoSecreto="1765760227">
     <script src="https://kit.fontawesome.com/f777b30381.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
-    <title>Canais de notícia</title>
+    <title>Pagina Inicial</title>
 </head>
 <body>
 
@@ -21,7 +21,7 @@
                     <i class="fas fa-home"></i>
                     <h3>Inicio</h3>
                 </li></a>
-                <a href="noticias.html" style="background-color: #631d96;"><li>
+                <a href="noticias.html"><li>
                     <i class="fas fa-newspaper"></i>
                     <h3>Canais de noticias</h3>
                 </li></a>
@@ -54,13 +54,13 @@
                     <i class="fas fa-newspaper"></i>
                     <h3>Inicio</h3>
                 </li></a>
-                <a href="noticias.html" style="background-color: #631d96;"><li>
+                <a href="noticias.html"><li>
                     <i class="fas fa-newspaper"></i>
                     <h3>Canais de noticias</h3>
                 </li></a>
                 
                 <a href="adicionarPessoa.html"><li>
-                    <i class="fas fa-user-plus"></i>
+                    <i class="fas fa-user-plus" style="background-color: #631d96;"></i>
                     <h3>Adicionar pessoas</h3>
                 </li></a>
 
@@ -81,32 +81,48 @@
             </ul>
         </nav><!--menu-moblile-->
 
-        <section class="news">
-            <div class="title-news"><h2>Catalogo de sites de notícias</h2></div>
-            <div class="content">
-                <div class="site-single">
-                    <div class="img-site" style="background-image: url(images/terra.png)"></div>
-                    <div class="content-site">
-                        <div class="title-site"><h2>Terra</h2></div>
-                        <div class="discription"><p>Veja no Terra as últimas notícias e as melhores coberturas ao vivo do Brasil e do Mundo, Esportes, Diversão, Vida e Estilo e assista os melhores vídeos no ...</p></div>
-                        <a href="https://www.terra.com.br/" target="_blanck">Acesse Aqui >></a>
+        <section class="register-form">
+            <div class="content-form">
+                <h2>Formulário para cadastro</h2>
+                <form action="" class="form">
+                    <div class="form-wraper">
+                    <label for="">Nome Completo*:</label>
+                    <input type="text" name="name" placeholder="Nome completo" required>
                     </div>
 
-                </div>
-                <div class="site-single2">
-                    <div class="img-site" style="background-image: url(images/cnn-brasil.jpg)"></div>
-                    <div class="content-site">
-                        <div class="title-site"><h2>CNN Brasil</h2></div>
-                        <div class="discription"><p>Veja no Terra as últimas notícias e as melhores coberturas ao vivo do Brasil e do Mundo, Esportes, Diversão, Vida e Estilo e assista os melhores vídeos no ...</p></div>
-                        <a href="https://www.cnnbrasil.com.br/" target="_blanck">Acesse Aqui >></a>
+                    <div class="form-wraper">
+                        <label for="">E-mail*:</label>
+                        <input type="text" name="email" placeholder="nome@dominio.com" required>
                     </div>
 
-                </div>
-                
+                    <div class="form-wraper">
+                    <label for="">Data de nascimento*:</label>
+                    <input type="date" name="date" required>
+                    </div>
+
+                    <div class="form-gender">
+                        <span>Sexo*:</span>
+                        <input type="radio" id="male" name="gender" required>
+                        <label for="male">Homem</label><br>
+                        <input type="radio" id="female" name="gender" required>
+                        <label for="female">Mulher</label><br>
+                        <input type="radio" id="not-info-gender" name="gender" required>
+                        <label for="not-info-gender">Não informar</label>
+                    </div>
+                    <div class="form-buttom">
+                        <div class="content-buttom">
+                            <input type="reset" value="Reset">
+                            <input type="submit" value="Editar">
+                        </div>
+
+                    </div>
+                </form>
             </div>
+            
 
-        </section><!--news-->
-    
+        </section><!--register-form-->
+        
     </div><!--container-->
+
 </body>
 </html>
