@@ -7,7 +7,7 @@
     <meta codigoSecreto="1765760227">
     <script src="https://kit.fontawesome.com/f777b30381.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
-    <title>Pagina Inicial</title>
+    <title>Lista de pessoas</title>
 </head>
 <body>
 
@@ -17,7 +17,7 @@
         </div>
         <nav class="menu-desktop">
             <ul>
-                <a href="index.html" style="background-color: #631d96;"><li>
+                <a href="index.html" ><li>
                     <i class="fas fa-home"></i>
                     <h3>Inicio</h3>
                 </li></a>
@@ -31,7 +31,7 @@
                     <h3>Adicionar pessoas</h3>
                 </li></a>
 
-                <a href="listarPessoas.html"><li>
+                <a href="listarPessoas.html" style="background-color: #631d96;"><li>
                     <i class="fas fa-address-card"></i>
                     <h3>Lista de pessoas</h3>
                 </li></a>
@@ -50,7 +50,7 @@
 
         <nav class="menu-moblile" style="display: none;">
             <ul>
-                <a href="index.html" style="background-color: #631d96;"><li>
+                <a href="index.html" ><li>
                     <i class="fas fa-newspaper"></i>
                     <h3>Inicio</h3>
                 </li></a>
@@ -64,7 +64,7 @@
                     <h3>Adicionar pessoas</h3>
                 </li></a>
 
-                <a href="listarPessoas.html"><li>
+                <a href="listarPessoas.html" style="background-color: #631d96;"><li>
                     <i class="fas fa-address-card"></i>
                     <h3>Lista de pessoas</h3>
                 </li></a>
@@ -81,38 +81,44 @@
             </ul>
         </nav><!--menu-moblile-->
 
-        <section class="presentation">
+        <section class="people-list">
+            <h1>Lista de pessoas cadastradas</h1>
+            <table>
+                <tr>
+                    <th>Nome completo</th>
+                    <th>Data de Nascimento</th>
+                    <th>E-mail</th>
+                    <th>Sexo</th>
+                    <th>Editar</th>
+                    <th>Remover</th>
+                </tr>
+                <tr>
+                    <td>José</td>
+                    <td>01/01/1900</td>
+                    <td><a href="mailto:jose@outro.com">jose@outro.com</a></td>
+                    <td>Masculino</td>
+                    <td class="edit-table-people"><a href="editarPessoa.html"><i class="fas fa-user-edit"></i></a></td>
+                    <td class="remove-table-people"><a href="#"><i class="fas fa-times"></i></a></td>
+                </tr>
+                <tr>
+                    <td>Maria</td>
+                    <td>01/01/1890</td>
+                    <td><a href="mailto:maria@outro.com">maria@outro.com</a></td>
+                    <td>Feminino</td>
+                    <td class="edit-table-people"><a href="editarPessoa.html"><i class="fas fa-user-edit"></i></a></td>
+                    <td class="remove-table-people"><a href="#"><i class="fas fa-times"></i></a></td>
+                </tr>
+                <tr>
+                    <td>Pabllita</td>
+                    <td>01/01/1900</td>
+                    <td><a href="mailto:naoSei@dominio.com">naoSei@dominio.com</a></td>
+                    <td>Não informado</td>
+                    <td class="edit-table-people"><a href="editarPessoa.html"><i class="fas fa-user-edit"></i></a></td>
+                    <td class="remove-table-people"><a href="#"><i class="fas fa-times"></i></a></td>
+                </tr>
+            </table>
             
-            <div class="wrap25"><a href="https://en.wikipedia.org/wiki/Front_end" target="_blanck">
-                <div class="symbol">
-                    <img src="images/front-end.png" alt="Front-end">
-                </div>
-                <div class="title"><h2>Front-end</h2></div>
-            </a></div>
-            
-            <div class="wrap7">
-                <div><i class="fas fa-plus"></i></div>
-            </div>
-            
-            <div class="wrap25"><a href="https://en.wikipedia.org/wiki/Back_end" target="_blanck">
-                <div class="symbol">
-                    <img src="images/back-end.png" alt="">
-                </div>
-                <div class="title"><h2>Back-end</h2></div>
-            </a></div>
-            
-            <div class="wrap7">
-                <div><i class="fas fa-plus"></i></div>
-            </div>
-            
-            <div class="wrap25"><a href="https://en.wikipedia.org/wiki/Database" target="_blanck">
-                <div class="symbol">
-                    <img src="images/bd.png" alt="">
-                </div>
-                <div class="title"><h2>Banco de dados</h2></div>
-            </a></div>
-
-        </section><!--presetation-->
+        </section><!--people-list-->
         
     </div><!--container-->
 

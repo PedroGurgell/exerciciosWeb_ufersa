@@ -41,10 +41,17 @@
 .menu-desktop ul li{
     width: 100%;
     height:100%;
-    padding: 10px 0;
+    padding: 8px 0;
     color:white;
     text-decoration: none;
     list-style-type: none;
+}
+.menu-desktop ul a:nth-child(2){
+    border-left: 0.5px solid #631d96;
+    border-right: 0.5px solid #631d96;
+}
+.menu-desktop ul a:nth-child(4){
+    border-right: 0.5px solid #631d96;
 }
 .menu-desktop ul li:hover{
     background-color:#631d96;
@@ -75,16 +82,24 @@
     width: 25%;
     padding: 60px 0;
     margin:0 2%;
+    transition: 0.5s;
     text-align: center;
+    cursor: pointer;
 }
 .wrap25:hover{
-    background-color:rgba(0,0,0, 0.5)
+    background-color:rgba(0,0,0, 0.5);
+    width: 28%;
 }
 .wrap7{
     width:7.5%;
     height:90px;
     margin-top:155px;
     text-align: center;
+}
+.wrap25 a{
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
 }
 
 .wrap25 .symbol{
@@ -277,6 +292,10 @@ section.register-form h2{
 .content-form .form-gender label{
     font-size:16px;
     color: #555;
+    cursor: pointer;
+}
+.content-form .form-gender input{
+    cursor: pointer;
 }
 
 .content-form input[type='radio']:checked:after {
@@ -386,5 +405,65 @@ section.register-form h2{
 
 /*
     <<< contato
+*/
+
+/*
+    listarPessoas >>>
+*/
+section.people-list{
+    width: 100%;
+    max-width: 1280px;
+    height: 600px;
+    padding: 10px 30px;
+}
+section.people-list h1{
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    font-size:35px;
+    background-color: white;
+    color:#4B0082;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 15px;
+    background-color: #eee;
+    box-shadow: 2px 2px 12px 3px rgba(0,0,0,0.2);
+
+}
+  
+th{
+    border-left: 1px solid #b385d4;
+    border-right: 1px solid #b385d4;
+    background-color: #4B0082;
+    color: white;
+}
+th, td{
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    font-size: 16px;
+}
+
+tr:hover {
+    background-color:#e3d9eb;
+}
+table tr a{
+    color: #777;
+}
+table .edit-table-people i{
+    color: #666;
+    font-size: 17px;
+}
+table .remove-table-people i{
+    color: #d12f26;
+    font-size: 16px;
+}
+
+
+
+/*
+    <<< listarPessoas
 */
 
