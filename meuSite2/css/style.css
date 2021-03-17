@@ -576,6 +576,76 @@ section.register-success{
         font-size: 30px;
     }
 
+    section.news{
+        width: 100%;
+        height: 650px;
+        padding: 30px 20px;
+    }
+    section.news .title-news{
+        width: 100%;
+    }
+
+    .content{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+        grid-template-rows: 1fr ;
+        grid-template-areas: 
+        "site-single"
+        "site-single2"
+    }
+    .site-single{
+        height: 220px;
+    }
+    .site-single2{
+        height: 220px;
+    }
+    .img-site{
+        height: 80%;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .info-content{
+        padding: 40px 50px;
+    }
+    .info-content h1{
+        font-size:30px;
+        margin-bottom: 15px;
+        
+    }
+    .info-content p{
+        color: #777;
+        font-size: 15px;
+        margin-bottom: 25px;
+    }
+
+}
+
+@media screen and (max-width:720px){
+    
+    section.people-list{
+        padding: 10px 10px;
+    }
+    section.people-list h1{
+        padding: 20px 0;
+        font-size:26px;
+    }
+      
+    th, td{
+        padding: 10px 5px;
+        text-align: center;
+        border-bottom: 1px solid #ccc;
+        font-size: 10px;
+    }
+    table .edit-table-people i{
+        font-size: 13px;
+    }
+    table .remove-table-people i{
+        color: #d12f26;
+        font-size: 13px;
+    }
 }
 /*
     <<< Responsive
