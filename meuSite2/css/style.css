@@ -68,7 +68,7 @@
 */
 .presentation{
     width: 100%;
-    height: 580px;
+    height: 650px;
     display: flex;
     padding: 100px 0;
     background-image: url(../images/background-image.jpg);
@@ -128,7 +128,7 @@
 */
 section.news{
     max-width:1280px;
-    height: 600px;
+    height: 650px;
     padding: 30px 40px;
 }
 section.news .title-news{
@@ -207,7 +207,7 @@ section.news .title-news{
 */
 .info{
     width: 100%;
-    height: 580px;
+    height: 650px;
     display: flex;
     background-image: url(../images/ufersa-angicos.jpg);
     background-size: cover;
@@ -362,7 +362,7 @@ section.register-form h2{
 */
 .contact{
     max-width: 1280px;
-    height:600px;
+    height:650px;
     text-align: center;
     padding: 30px 0;
 }
@@ -413,7 +413,7 @@ section.register-form h2{
 section.people-list{
     width: 100%;
     max-width: 1280px;
-    height: 600px;
+    height: 650px;
     padding: 10px 30px;
 }
 section.people-list h1{
@@ -471,6 +471,7 @@ table .remove-table-people i{
 section.register-success{
     width: 100%;
     max-width: 1280px;
+    height: 650px;
     text-align: center;
     padding: 100px 0;
 }
