@@ -100,6 +100,7 @@ font-size: 14px;
     color:white;
     line-height: 65px;
     border-radius: 65px;
+    cursor: pointer;
 }
 .menu-moblile .button-menu:hover{
     background-color:#631d96;
@@ -293,6 +294,7 @@ section.news .title-news{
     background-color: #4B0082;
 }
 .info-content a span{
+    font-size: 1.5vw;
     position: relative;
     top: -12px;
     left: 5px;
@@ -642,6 +644,9 @@ section.register-success{
         font-size: 15px;
         margin-bottom: 25px;
     }
+    .info-content a span{
+        font-size: 15px;
+    }
 
 }
 
@@ -668,6 +673,10 @@ section.register-success{
         color: #d12f26;
         font-size: 13px;
     }
+    .info-content a span{
+        font-size: 13px;
+    }
+
 }
 /*
     <<< Responsive
