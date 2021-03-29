@@ -31,7 +31,7 @@
                     <h3>Adicionar pessoas</h3>
                 </li></a>
 
-                <a href="/listarPessoas.html" class="active"><li style="background-color: #631d96;">
+                <a href="/listarPessoas" class="active"><li style="background-color: #631d96;">
                     <i class="fas fa-address-card"></i>
                     <h3>Lista de pessoas</h3>
                 </li></a>
@@ -96,13 +96,13 @@
                 </tr>
                 <tr th:each="pessoa: ${pessoas}">
                 
-                	<td th:text="${Pessoa.id}"></td>
-                    <td th:text="${Pessoa.nome}"></td>
+                	<td th:text="${pessoa.id}"></td>
+                    <td th:text="${pessoa.nome}"></td>
                     <td th:text="${#temporals.format{pessoa.dataNascimento,'dd/MM/yyyy'}"></td>
                     <td>
-                    <a th:href="'mailto:'+${pessoa.email}" th:text="${Pessoa.email}"></a>
+                    <a th:href="'mailto:'+${pessoa.email}" th:text="${pessoa.email}"></a>
                     </td>
-                    <td th:text="${Pessoa.genero}"></td>
+                    <td th:text="${pessoa.genero}"></td>
                     <td class="edit-table-people">
                     <a th:href="@{/editar/{id}(id=${pessoa.id})}"><i class="fas fa-user-edit"></i></a>
                     </td>
