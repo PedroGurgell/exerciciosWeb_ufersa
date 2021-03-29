@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta codigoSecreto="1765760227">
+    <script src="https://kit.fontawesome.com/f777b30381.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Pagina de edição de pessoas</title>
+</head>
+<body>
+
+    <div class="conteiner">
+        <div class="header">
+            <div><h2>Programação WEB</h2></div>
+        </div>
+        <nav class="menu-desktop">
+            <ul>
+                <a href="index.html"><li>
+                    <i class="fas fa-home"></i>
+                    <h3>Inicio</h3>
+                </li></a>
+                <a href="noticias.html"><li>
+                    <i class="fas fa-newspaper"></i>
+                    <h3>Canais de noticias</h3>
+                </li></a>
+                
+                <a href="adicionarPessoa.html"><li>
+                    <i class="fas fa-user-plus"></i>
+                    <h3>Adicionar pessoas</h3>
+                </li></a>
+
+                <a href="listarPessoas.html"><li>
+                    <i class="fas fa-address-card"></i>
+                    <h3>Lista de pessoas</h3>
+                </li></a>
+
+                <a href="sobre.html"><li>
+                    <i class="fas fa-info"></i>
+                    <h3>Sobre o site</h3>
+                </li></a>
+
+                <a href="contato.html"><li>
+                    <i class="fas fa-paper-plane"></i>
+                    <h3>Mande um email</h3>
+                </li></a>
+            </ul>
+        </nav><!--menu-desktop-->
+
+        <nav class="menu-moblile">
+            <ul>
+                <a href="index.html"><li>
+                    <i class="fas fa-home"></i>
+
+                </li></a>
+                <a href="noticias.html"><li>
+                    <i class="fas fa-newspaper"></i>
+
+                </li></a>
+                
+                <a href="adicionarPessoa.html"><li>
+                    <i class="fas fa-user-plus"></i>
+
+                </li></a>
+
+                <a href="listarPessoas.html"><li>
+                    <i class="fas fa-address-card"></i>
+
+                </li></a>
+
+                <a href="sobre.html"><li>
+                    <i class="fas fa-info"></i>
+
+                </li></a>
+
+                <a href="contato.html"><li>
+                    <i class="fas fa-paper-plane"></i>
+
+                </li></a>
+            </ul>
+            <div class="button-menu"><i class="fas fa-bars"></i></div>
+        </nav><!--menu-moblile-->
+
+        <section class="register-form">
+            <div class="content-form">
+                <h2>Formulário para edição de pessoas</h2>
+                <form action="listarPessoas.html" class="form">
+                    <div class="form-wraper">
+                    <label for="">Nome Completo*:</label>
+                    <input type="text" name="name" placeholder="Nome completo" required>
+                    </div>
+
+                    <div class="form-wraper">
+                        <label for="">E-mail*:</label>
+                        <input type="text" name="email" placeholder="nome@dominio.com" required>
+                    </div>
+
+                    <div class="form-wraper">
+                    <label for="">Data de nascimento*:</label>
+                    <input type="date" name="date" required>
+                    </div>
+
+                    <div class="form-gender">
+                        <span>Sexo*:</span>
+                        <input type="radio" id="male" name="gender" required>
+                        <label for="male">Homem</label><br>
+                        <input type="radio" id="female" name="gender" required>
+                        <label for="female">Mulher</label><br>
+                        <input type="radio" id="not-info-gender" name="gender" required>
+                        <label for="not-info-gender">Não informar</label>
+                    </div>
+                    <div class="form-buttom">
+                        <div class="content-buttom">
+                            <input type="reset" value="Reset">
+                            <input type="submit" value="Editar">
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+            
+
+        </section><!--register-form-->
+        
+    </div><!--container-->
+
+    <!--Jquery-->
+    <script src="js/jquery.js"></script>
+    <script src="js/functions.js"></script>
+</body>
+</html>
