@@ -98,7 +98,7 @@
                 
                 	<td th:text="${pessoa.id}"></td>
                     <td th:text="${pessoa.nome}"></td>
-                    <td th:text="${#temporals.format{pessoa.dataNascimento,'dd/MM/yyyy'}"></td>
+                    <td th:text="${#temporals.format(pessoa.dataNascimento,'dd/MM/yyyy')}"></td>
                     <td>
                     <a th:href="'mailto:'+${pessoa.email}" th:text="${pessoa.email}"></a>
                     </td>
