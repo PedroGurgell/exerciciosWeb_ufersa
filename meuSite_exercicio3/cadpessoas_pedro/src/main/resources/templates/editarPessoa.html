@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta codigoSecreto="1765760227">
     <script src="https://kit.fontawesome.com/f777b30381.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
     <title>Pagina de edição de pessoas</title>
 </head>
 <body>
@@ -17,26 +17,26 @@
         </div>
         <nav class="menu-desktop">
             <ul>
-                <a href="index.html"><li>
+                <a href="/"><li>
                     <i class="fas fa-home"></i>
                     <h3>Inicio</h3>
                 </li></a>
-                <a href="noticias.html"><li>
+                <a href="public/noticias.html"><li>
                     <i class="fas fa-newspaper"></i>
                     <h3>Canais de noticias</h3>
                 </li></a>
                 
-                <a href="adicionarPessoa.html"><li>
+                <a href="adicionarPessoa"><li>
                     <i class="fas fa-user-plus"></i>
                     <h3>Adicionar pessoas</h3>
                 </li></a>
 
-                <a href="listarPessoas.html"><li>
+                <a href="listarPessoas"><li>
                     <i class="fas fa-address-card"></i>
                     <h3>Lista de pessoas</h3>
                 </li></a>
 
-                <a href="sobre.html"><li>
+                <a href="public/sobre.html"><li>
                     <i class="fas fa-info"></i>
                     <h3>Sobre o site</h3>
                 </li></a>
@@ -85,29 +85,31 @@
         <section class="register-form">
             <div class="content-form">
                 <h2>Formulário para edição de pessoas</h2>
-                <form action="listarPessoas.html" class="form">
+                
+                <form class="form" th:action="@{/editar/{id}(id=${pessoa.id})}" 
+                th:object="${pessoa}" method="POST">
                     <div class="form-wraper">
                     <label for="">Nome Completo*:</label>
-                    <input type="text" name="name" placeholder="Nome completo" required>
+                    <input type="text" name="name" placeholder="Nome completo" th:field=*{nome} required>
                     </div>
 
                     <div class="form-wraper">
                         <label for="">E-mail*:</label>
-                        <input type="text" name="email" placeholder="nome@dominio.com" required>
+                        <input type="text" name="email" placeholder="nome@dominio.com" th:field=*{email} required>
                     </div>
 
                     <div class="form-wraper">
                     <label for="">Data de nascimento*:</label>
-                    <input type="date" name="date" required>
+                    <input type="date" name="date" th:field=*{dataNascimento} required>
                     </div>
 
                     <div class="form-gender">
                         <span>Sexo*:</span>
-                        <input type="radio" id="male" name="gender" required>
+                        <input type="radio" id="male" name="gender" value="Masculino" th:field=*{genero} required>
                         <label for="male">Homem</label><br>
-                        <input type="radio" id="female" name="gender" required>
+                        <input type="radio" id="female" name="gender" value="Feminino" th:field=*{genero} required>
                         <label for="female">Mulher</label><br>
-                        <input type="radio" id="not-info-gender" name="gender" required>
+                        <input type="radio" id="not-info-gender" name="gender" value="Não informado" th:field=*{genero} required>
                         <label for="not-info-gender">Não informar</label>
                     </div>
                     <div class="form-buttom">
@@ -126,7 +128,7 @@
     </div><!--container-->
 
     <!--Jquery-->
-    <script src="js/jquery.js"></script>
-    <script src="js/functions.js"></script>
+    <script th:src="@{js/jquery.js}"></script>
+    <script th:src="@{js/functions.js}"></script>
 </body>
 </html>

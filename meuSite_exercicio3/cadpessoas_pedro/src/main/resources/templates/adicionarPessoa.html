@@ -108,7 +108,7 @@
                         <label for="male">Homem</label><br>
                         <input type="radio" id="female" name="gender" value="Feminino" th:field="*{genero}" required>
                         <label for="female">Mulher</label><br>
-                        <input type="radio" id="not-info-gender" name="gender" value="Não informar" th:field="*{genero}" required>
+                        <input type="radio" id="not-info-gender" name="gender" value="Não informado" th:field="*{genero}" required>
                         <label for="not-info-gender">Não informar</label>
                     </div>
                     <div class="form-buttom">
@@ -125,7 +125,7 @@
     </div><!--container-->
 
     <!--Jquery-->
-<script src="js/jquery.js"></script>
-<script src="js/functions.js"></script>
+    <script th:src="@{js/jquery.js}"></script>
+    <script th:src="@{js/functions.js}"></script>
 </body>
 </html>
