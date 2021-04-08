@@ -59,6 +59,7 @@ public class PessoaController {
 		pessoaRepo.delete(delPessoa);
 		return new ModelAndView("redirect:/listarPessoas");
 	}
+	
 	//Editar pessoa
 	@GetMapping("/editar/{id}")
 	public ModelAndView formEditPessoa(@PathVariable("id") long id) {
@@ -68,6 +69,7 @@ public class PessoaController {
 		model.addObject(editEl);
 		return model;
 	}
+	
 	//Salvar pessoa editada no Bando de dados
 	@PostMapping("/editar/{id}")
 	public ModelAndView editPessoa(@PathVariable("id") long id, Pessoa pessoa) {
