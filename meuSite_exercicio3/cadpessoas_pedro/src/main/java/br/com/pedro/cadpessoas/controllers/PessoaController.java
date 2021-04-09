@@ -48,7 +48,7 @@ public class PessoaController {
 	@PostMapping("/adicionarPessoa")
 	public String AddPessoa(Pessoa p) {
 		this.pessoaRepo.save(p);
-		return "redirect:/listarPessoas";
+		return "redirect:/public/adicionadaComSucesso.html";
 	}
 	
 	//Deletar Pessoa

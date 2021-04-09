@@ -537,20 +537,19 @@ table .remove-table-people i{
 */
 section.register-success{
     width: 100%;
-    max-width: 1280px;
-    height: 650px;
+    height: 650;
     text-align: center;
     padding: 100px 0;
 }
 .register-success i{
     color:#4dcb4d;
     font-size:100px;
-    animation: fadeIn 3s ease-in-out;
+    animation: fadeIn 2s ease-in-out;
 }
 .register-success h1{
-    color: #777;
+    color: #444;
     font-size: 50px;
-    animation: fadeIn 2s ease-in-out;
+    animation: fadeIn 1.5s ease-in-out;
 }
 @keyframes fadeIn{
     from { opacity: 0; }
