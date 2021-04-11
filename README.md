@@ -15,7 +15,7 @@
 - [x] Seguir a estrutura repaçada
 - [x] Dar o próprio estilo ao site
 - [x] Deixar responsivo 
-### Aula 3: Criação de um CRUD a partir do site da Aula 2
+### Aula 3: Criação de um CRUD a partir do site da "Aula 2"
   [**Clique aqui para visualizar!**](https://cadpessoas-pweb.herokuapp.com)
 - [x] Utilização da linguagem java com o framework Spring Boot para o back-end
 - [x] Projeto criado com database H2 
