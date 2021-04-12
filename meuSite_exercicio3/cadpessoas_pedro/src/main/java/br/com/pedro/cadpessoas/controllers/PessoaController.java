@@ -10,11 +10,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.fasterxml.jackson.annotation.JsonCreator.Mode;
 
 import br.com.pedro.cadpessoas.model.Pessoa;
 import br.com.pedro.cadpessoas.repositories.PessoaRepository;
-import lombok.experimental.PackagePrivate;
+
 
 @Controller
 @RequestMapping("/")
