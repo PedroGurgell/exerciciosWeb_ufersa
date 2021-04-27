@@ -14,18 +14,14 @@ import br.com.pedro.agropopshop.model.Cliente;
 import br.com.pedro.agropopshop.repositories.ClienteRepository;
 
 @Controller
-@RequestMapping("/adm")
+@RequestMapping
 public class ClienteController {
 
 		@Autowired
 		ClienteRepository clienteRepo;
 		
-		@GetMapping
-		public String index() {
-			return "/adm/index.html";
-		}
 		
-		@GetMapping("/listarClientes")
+		@GetMapping("/adm/listarClientes")
 		public ModelAndView listarClientes() {
 			List<Cliente> lista = clienteRepo.findAll();
 			ModelAndView mav = new ModelAndView("/adm/listarClientes");
@@ -34,7 +30,7 @@ public class ClienteController {
 		}
 		
 		//Trnasformar informções do form em novo objeto Pessoa
-		@GetMapping("/adicionarCliente")
+		@GetMapping("/adm/adicionarCliente")
 		public ModelAndView formAddCliente(){
 			ModelAndView mav = new ModelAndView("/adm/adicionarCliente");
 		 	mav.addObject(new Cliente());
@@ -42,14 +38,14 @@ public class ClienteController {
 		}
 		
 		//Adicionar pessoa
-		@PostMapping("/adicionarCliente")
+		@PostMapping("/adm/adicionarCliente")
 		public String AddCliente(Cliente p) {
 			this.clienteRepo.save(p);
 			return "redirect:/adm/listarClientes";
 		}
 		
 		//Deletar Pessoa
-		@GetMapping("/remover/{id}")
+		@GetMapping("/adm/remover/{id}")
 		public ModelAndView deleteCliente(@PathVariable("id") long id) {
 			Cliente delCliente = clienteRepo.findById(id)
 				.orElseThrow(() -> new IllegalArgumentException("ID inválido" + id));
@@ -58,7 +54,7 @@ public class ClienteController {
 		}
 		
 		//Editar pessoa
-		@GetMapping("/editar/{id}")
+		@GetMapping("/adm/editar/{id}")
 		public ModelAndView formEditcliente(@PathVariable("id") long id) {
 			Cliente editEl = clienteRepo.findById(id)
 				.orElseThrow(() -> new IllegalArgumentException("ID inválido" + id));
@@ -68,7 +64,7 @@ public class ClienteController {
 		}
 		
 		//Salvar pessoa editada no Bando de dados
-		@PostMapping("/editar/{id}")
+		@PostMapping("/adm/editar/{id}")
 		public ModelAndView editCliente(@PathVariable("id") long id, Cliente cliente) {
 			this.clienteRepo.save(cliente);
 			return new ModelAndView("redirect:/adm/listarClientes");

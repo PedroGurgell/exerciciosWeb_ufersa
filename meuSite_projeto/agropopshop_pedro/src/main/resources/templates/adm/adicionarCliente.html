@@ -44,21 +44,21 @@
         
         <form method="POST" th:object="${cliente}" th:action="@{/adm/adicionarCliente}">
             <div class=" col-md form-floating mt-3 mb-3">
-                <input th:field="*{nome}" type="text" class="form-control" id="floatingInput" >
+                <input th:field="*{nome}" type="text" class="form-control" id="floatingInput" placeholder="#">
                 <label for="floatingInput">Nome Completo</label>
             </div>
             <div class=" col-md form-floating mb-3">
-                <input th:field="*{email}" type="text" class="form-control" id="floatingInput" >
+                <input th:field="*{email}" type="text" class="form-control" id="floatingInput" placeholder="#">
                 <label for="floatingInput">Email</label>
             </div>
             <div class="col md form-floating  mb-3">
-                <input th:field="*{endereco}" type="text" class="form-control" id="floatingPassword" >
+                <input th:field="*{endereco}" type="text" class="form-control" id="floatingPassword" placeholder="#">
                 <label for="floatingPassword">Endereço</label>
             </div>
             <div class="row g-2  mb-3">
                 <div class="col-md">
                     <div class="form-floating">
-                      <select th:field="*{genero}" class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+                      <select th:field="*{genero}" class="form-select" id="floatingSelectGrid" aria-label="Floating label select example" placeholder="#">
                         <option   th:value="'Masculino'">Masculino</option>
                         <option   th:value="'Feminino'">Feminino</option>
                         <option   th:value="'Não informar'">Não informar</option>
@@ -68,7 +68,7 @@
                   </div>
                 <div class="col-md">
                   <div class="form-floating">
-                    <input th:field="*{cep}" type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <input th:field="*{cep}" type="text" class="form-control" id="floatingInput" placeholder="#">
                     <label for="floatingInput">Cep</label>
                   </div>
                 </div>
@@ -77,7 +77,7 @@
             <div class="row">
                 <div class="col mt-3 mb-5" align="center">
                     <button type="reset" value="reset" class="col-sm btn btn-secondary">Limpar</button>
-                    <button type="submit" value="cadastrar" class="col-sm btn btn-success ">Cadastrar</button> 
+                    <button type="submit" value="cadastrar" class="col-sm btn btn-success ">Cadastrar Cliente</button> 
                 </div>
             </div>
 

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
-    <title>Cadastrar Cliente</title>
+    <title>Cadastrar Produto</title>
 </head>
 <body>
     <header class="p-3 bg-dark text-white">
@@ -16,7 +16,7 @@
               <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
             </a>
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-              <li><a href="/" class="nav-link px-2 text-white">Home</a></li>
+              <li><a href="/" class="nav-link px-2 text-secondary">Home</a></li>
               <li><a href="/produtos" class="nav-link px-2 text-white">Produtos</a></li>
               <li><a href="/adm/adicionarCliente" class="nav-link px-2 text-white">Adicionar Cliente</a></li>
               <li><a href="/adm/adicionarProduto" class="nav-link px-2 text-white">Adicionar Produto</a></li>
@@ -40,50 +40,71 @@
 
     <div class="container text-center col-md-8" >
         
-        <h1 class="display-5 mt-5 mb-5">Editar cliente</h1>
+        <h1 class="display-5 mt-5 mb-5">Cadastrar Produto</h1>
         
-        <form method="POST" th:object="${cliente}" th:action="@{/adm/editar/{id}(id=${cliente.id})}">
-            <div class=" col-md form-floating mt-3 mb-3">
+        <form method="POST" th:object="${produto}" th:action="@{/adm/adicionarProduto}">
+            
+            <div class="form-floating">
                 <input th:field="*{nome}" type="text" class="form-control" id="floatingInput" placeholder="#">
-                <label for="floatingInput">Nome Completo</label>
-            </div>
-            <div class=" col-md form-floating mb-3">
-                <input th:field="*{email}" type="text" class="form-control" id="floatingInput" placeholder="#">
-                <label for="floatingInput">Email</label>
-            </div>
-            <div class="col md form-floating  mb-3">
-                <input th:field="*{endereco}" type="text" class="form-control" id="floatingPassword" placeholder="#">
-                <label for="floatingPassword">Endereço</label>
-            </div>
-            <div class="row g-2  mb-3">
-                <div class="col-md">
-                    <div class="form-floating">
-                      <select th:field="*{genero}" class="form-select" id="floatingSelectGrid" aria-label="Floating label select example" placeholder="#">
-                        <option   th:value="'Masculino'">Masculino</option>
-                        <option   th:value="'Feminino'">Feminino</option>
-                        <option   th:value="'Não informar'">Não informar</option>
-                      </select>
-                      <label for="floatingSelectGrid">Sexo</label>
-                    </div>
-                  </div>
+                <label for="floatingInput">Nome do produto</label>
+              </div>
+            
+            <div class="row g-2  mt-3 mb-3">
+                
                 <div class="col-md">
                   <div class="form-floating">
-                    <input th:field="*{cep}" type="text" class="form-control" id="floatingInput" placeholder="#">
-                    <label for="floatingInput">Cep</label>
+                    <input th:field="*{Marca}" type="text" class="form-control" id="floatingInput" placeholder="#">
+                    <label for="floatingInput">Marca do produto</label>
                   </div>
+                </div>
+                <div class="col-md">
+                    <div class="form-floating">
+                      <input th:field="*{altura}" type="number" class="form-control" id="floatingInput" placeholder="#">
+                      <label for="floatingInput">Altura em cm</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-2  mb-3">
+                
+                <div class="col-md">
+                  <div class="form-floating">
+                    <input th:field="*{largura}" type="number" class="form-control" id="floatingInput" placeholder="#">
+                    <label for="floatingInput">Largura em cm</label>
+                  </div>
+                </div>
+                <div class="col-md">
+                    <div class="form-floating">
+                      <input th:field="*{profundidade}" type="number" class="form-control" id="floatingInput" placeholder="#">
+                      <label for="floatingInput">Profundidade em cm</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-2  mb-3">
+                
+                <div class="col-md">
+                  <div class="form-floating">
+                    <input th:field="*{peso}" type="number" class="form-control" id="floatingInput" placeholder="#">
+                    <label for="floatingInput">Peso em kg</label>
+                  </div>
+                </div>
+                <div class="col-md">
+                    <div class="form-floating">
+                      <input th:field="*{preco}" type="number" class="form-control" id="floatingInput" placeholder="#">
+                      <label for="floatingInput">Preço</label>
+                    </div>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col mt-3 mb-5" align="center">
                     <button type="reset" value="reset" class="col-sm btn btn-secondary">Limpar</button>
-                    <button type="submit" value="cadastrar" class="col-sm btn btn-success ">Cadastrar</button> 
+                    <button type="submit" value="cadastrar" class="col-sm btn btn-success ">Cadastrar Produto</button> 
                 </div>
             </div>
 
         </form>
     </div>
 
-<script src="js/bootstrap.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
 </body>
 </html>
