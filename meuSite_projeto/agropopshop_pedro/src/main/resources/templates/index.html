@@ -4,13 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
     <meta codigoSecreto="2011138773">
     <title>Pagina Inicial</title>
 </head>
 <body>
-    <div class="container" style="text-align: center; font-size: 25px;">
-        <a th:href="@{/client}" style="text-decoration: none; color:cornflowerblue;">Site pra Clientes(Em construção)</a>
-        <a th:href="@{/adm}" style="text-decoration: none;color: crimson;">Site Para ADM</a>
+    <div class="container" style="text-align: center;">
+
+        <div class="row row-cols-1 row-cols-md-2 g-4 mt-5">
+        
+			  <div class="col">
+			    <div class="shadow-lg p-3 mb-5 bg-white rounded">
+			      <img th:src="@{/images/image_pp.png}" class="card-img-top" alt="...">
+			      <div class="card-body">
+			        <h5 class="card-title">Página de Cliente</h5>
+			        <p class="card-text">Acesse clicando abaixo para ir a página de clientes </p>
+			     	<a th:href="@{/client}" class="btn btn-primary">AgroPopShop - Cliente</a>
+			      </div>
+			    </div>
+			  </div>
+			  <div class="col">
+			    <div class="shadow-lg p-3 mb-5 bg-white rounded">
+			      <img th:src="@{/images/image2_pp.png}" class="card-img-top" alt="...">
+			      <div class="card-body">
+			        <h5 class="card-title">Página de Administrador</h5>
+			        <p class="card-text">Acesse clicando abaixo para ir a página para os administradores.</p>
+			      	<a th:href="@{/adm}"class="btn btn-primary">AgroPopShop - Adm</a>
+			      </div>
+			    </div>
+			  </div>
+			
+		</div>
+        
+        
+        
+        
     </div>
+    
+<script th:src="@{/js/bootstrap.min.js}"></script>
 </body>
 </html>
