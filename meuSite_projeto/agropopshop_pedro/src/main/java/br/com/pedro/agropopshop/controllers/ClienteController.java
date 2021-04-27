@@ -20,7 +20,30 @@ public class ClienteController {
 		@Autowired
 		ClienteRepository clienteRepo;
 		
+		/* 
+		 Interação com Cliente >>
+		 */
 		
+		//Trnasformar informções do form em novo objeto Cliente(Pelo Cliente)
+		@GetMapping("/client/adicionarCliente")
+		public ModelAndView formAdicionarCliente(){
+			ModelAndView mav = new ModelAndView("/client/adicionarCliente");
+			mav.addObject(new Cliente());
+			return mav;
+				}
+				
+		//Adicionar Cliente
+		@PostMapping("/client/adicionarCliente")
+		public String AdicionarCliente(Cliente p) {
+			this.clienteRepo.save(p);
+			return "redirect:/client";
+				}
+		
+		/* 
+		 Interação com ADM >>
+		 */
+		
+		//Trnasformar informções do form em novo objeto Cliente
 		@GetMapping("/adm/listarClientes")
 		public ModelAndView listarClientes() {
 			List<Cliente> lista = clienteRepo.findAll();
@@ -28,8 +51,8 @@ public class ClienteController {
 			mav.addObject("clientes",lista);
 			return mav;
 		}
-		
-		//Trnasformar informções do form em novo objeto Pessoa
+
+		//Trnasformar informções do form em novo objeto Cliente
 		@GetMapping("/adm/adicionarCliente")
 		public ModelAndView formAddCliente(){
 			ModelAndView mav = new ModelAndView("/adm/adicionarCliente");
@@ -37,14 +60,14 @@ public class ClienteController {
 			return mav;
 		}
 		
-		//Adicionar pessoa
+		//Adicionar Cliente
 		@PostMapping("/adm/adicionarCliente")
 		public String AddCliente(Cliente p) {
 			this.clienteRepo.save(p);
 			return "redirect:/adm/listarClientes";
 		}
 		
-		//Deletar Pessoa
+		//Deletar Cliente
 		@GetMapping("/adm/remover/{id}")
 		public ModelAndView deleteCliente(@PathVariable("id") long id) {
 			Cliente delCliente = clienteRepo.findById(id)
@@ -53,7 +76,7 @@ public class ClienteController {
 			return new ModelAndView("redirect:/adm/listarClientes");
 		}
 		
-		//Editar pessoa
+		//Editar Cliente
 		@GetMapping("/adm/editar/{id}")
 		public ModelAndView formEditcliente(@PathVariable("id") long id) {
 			Cliente editEl = clienteRepo.findById(id)
@@ -63,7 +86,7 @@ public class ClienteController {
 			return model;
 		}
 		
-		//Salvar pessoa editada no Bando de dados
+		//Salvar cliente editado no Bando de dados
 		@PostMapping("/adm/editar/{id}")
 		public ModelAndView editCliente(@PathVariable("id") long id, Cliente cliente) {
 			this.clienteRepo.save(cliente);

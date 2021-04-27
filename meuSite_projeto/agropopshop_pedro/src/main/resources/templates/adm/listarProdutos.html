@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
         <script	src="https://kit.fontawesome.com/f777b30381.js" crossorigin="anonymous"></script>
+        <meta codigoSecreto="2011138773">
     <title>Lista de Clientes</title>
 </head>
 <body>
@@ -14,18 +15,15 @@
         <div class="container">
           
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+            <a href="/adm" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
               <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
             </a>
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-              <li><a href="/" class="nav-link px-2 text-secondary">Home</a></li>
-              <li><a href="/produtos" class="nav-link px-2 text-white">Produtos</a></li>
+              <li><a href="/adm" class="nav-link px-2 text-white">Home</a></li>
               <li><a href="/adm/adicionarCliente" class="nav-link px-2 text-white">Adicionar Cliente</a></li>
               <li><a href="/adm/adicionarProduto" class="nav-link px-2 text-white">Adicionar Produto</a></li>
               <li><a href="/adm/listarClientes" class="nav-link px-2 text-white">Listar Clientes</a></li>
-              <li><a href="/adm/listarProdutos" class="nav-link px-2 text-white">Listar Produtos</a></li>
-
-              <li><a href="public/sobre.html" class="nav-link px-2 text-white">Sobre</a></li>
+              <li><a href="/adm/listarProdutos" class="nav-link px-2 text-secondary">Listar Produtos</a></li>
             </ul>
             <!--
             <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
