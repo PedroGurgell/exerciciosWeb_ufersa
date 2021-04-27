@@ -27,7 +27,7 @@ public class ClienteController {
 		//Trnasformar informções do form em novo objeto Cliente(Pelo Cliente)
 		@GetMapping("/client/adicionarCliente")
 		public ModelAndView formAdicionarCliente(){
-			ModelAndView mav = new ModelAndView("/client/adicionarCliente");
+			ModelAndView mav = new ModelAndView("client/adicionarCliente");
 			mav.addObject(new Cliente());
 			return mav;
 				}
@@ -47,7 +47,7 @@ public class ClienteController {
 		@GetMapping("/adm/listarClientes")
 		public ModelAndView listarClientes() {
 			List<Cliente> lista = clienteRepo.findAll();
-			ModelAndView mav = new ModelAndView("/adm/listarClientes");
+			ModelAndView mav = new ModelAndView("adm/listarClientes");
 			mav.addObject("clientes",lista);
 			return mav;
 		}
@@ -55,7 +55,7 @@ public class ClienteController {
 		//Trnasformar informções do form em novo objeto Cliente
 		@GetMapping("/adm/adicionarCliente")
 		public ModelAndView formAddCliente(){
-			ModelAndView mav = new ModelAndView("/adm/adicionarCliente");
+			ModelAndView mav = new ModelAndView("adm/adicionarCliente");
 		 	mav.addObject(new Cliente());
 			return mav;
 		}
@@ -81,7 +81,7 @@ public class ClienteController {
 		public ModelAndView formEditcliente(@PathVariable("id") long id) {
 			Cliente editEl = clienteRepo.findById(id)
 				.orElseThrow(() -> new IllegalArgumentException("ID inválido" + id));
-			ModelAndView model = new ModelAndView("/adm/editarCliente");
+			ModelAndView model = new ModelAndView("adm/editarCliente");
 			model.addObject(editEl);
 			return model;
 		}

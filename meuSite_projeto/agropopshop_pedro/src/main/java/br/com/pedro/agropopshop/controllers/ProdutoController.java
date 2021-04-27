@@ -23,7 +23,7 @@ public class ProdutoController {
 		@GetMapping("/adm/listarProdutos")
 		public ModelAndView listarProdutos() {
 			List<Produto> listaProdutos = produtoRepo.findAll();
-			ModelAndView mav = new ModelAndView("/adm/listarProdutos");
+			ModelAndView mav = new ModelAndView("adm/listarProdutos");
 			mav.addObject("produtos",listaProdutos);
 			return mav;
 		}
@@ -31,7 +31,7 @@ public class ProdutoController {
 		//Trnasformar informções do form em novo objeto Pessoa
 		@GetMapping("/adm/adicionarProduto")
 		public ModelAndView formAddProduto(){
-			ModelAndView mav = new ModelAndView("/adm/adicionarProduto");
+			ModelAndView mav = new ModelAndView("adm/adicionarProduto");
 		 	mav.addObject(new Produto());
 			return mav;
 		}
@@ -57,7 +57,7 @@ public class ProdutoController {
 		public ModelAndView formEditProduto(@PathVariable("id") long id) {
 			Produto editElProduto = produtoRepo.findById(id)
 				.orElseThrow(() -> new IllegalArgumentException("ID inválido" + id));
-			ModelAndView model = new ModelAndView("/adm/editarProduto");
+			ModelAndView model = new ModelAndView("adm/editarProduto");
 			model.addObject(editElProduto);
 			return model;
 		}
