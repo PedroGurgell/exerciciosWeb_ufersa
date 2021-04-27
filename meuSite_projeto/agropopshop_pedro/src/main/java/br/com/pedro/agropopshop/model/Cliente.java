@@ -18,13 +18,12 @@ import lombok.NoArgsConstructor;
 
 
 
-public class Cliente {
 	@AllArgsConstructor
 	@NoArgsConstructor
 	@Data
 	@Entity
-	@Table(name="pessoas")
-	public class Pessoa implements Serializable{
+	@Table(name="clientes")
+	public class Cliente implements Serializable{
 
 		private static final long serialVersionUID = -7498256744927465623L;
 
@@ -34,12 +33,11 @@ public class Cliente {
 		
 		private String nome;
 		private String email;
+		private String endereco;
+		private String cep;
 		private String genero;
 		
-		@Column(nullable=false)
-		@DateTimeFormat(pattern="yyyy-MM-dd")
-		private LocalDate dataNascimento;
-		
+
 		
 		public long getId() {
 			return id;
@@ -59,14 +57,20 @@ public class Cliente {
 		public void setEmail(String email) {
 			this.email = email;
 		}
-		public LocalDate getDataNascimento() {
-			return dataNascimento;
-		}
-		public void setDataNascimento(LocalDate dataNascimento) {
-			this.dataNascimento = dataNascimento;
-		}
 		public String getGenero() {
 			return genero;
+		}
+		public String getEndereco() {
+			return endereco;
+		}
+		public void setEndereco(String endereco) {
+			this.endereco = endereco;
+		}
+		public String getCep() {
+			return cep;
+		}
+		public void setCep(String cep) {
+			this.cep = cep;
 		}
 		public void setGenero(String genero) {
 			this.genero = genero;
@@ -74,5 +78,3 @@ public class Cliente {
 		
 	}
 
-
-}

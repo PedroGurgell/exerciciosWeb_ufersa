@@ -14,7 +14,7 @@ import br.com.pedro.agropopshop.model.Cliente;
 import br.com.pedro.agropopshop.repositories.ClienteRepository;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/adm")
 public class ClienteController {
 
 		@Autowired
@@ -22,30 +22,30 @@ public class ClienteController {
 		
 		@GetMapping
 		public String index() {
-			return "index.html";
+			return "/adm/index.html";
 		}
 		
-		@GetMapping("/listarPessoas")
-		public ModelAndView listarPessoas() {
+		@GetMapping("/listarClientes")
+		public ModelAndView listarClientes() {
 			List<Cliente> lista = clienteRepo.findAll();
-			ModelAndView mav = new ModelAndView("listarPessoas");
-			mav.addObject("pessoas",lista);
+			ModelAndView mav = new ModelAndView("/adm/listarClientes");
+			mav.addObject("clientes",lista);
 			return mav;
 		}
 		
 		//Trnasformar informções do form em novo objeto Pessoa
-		@GetMapping("/adicionarPessoa")
-		public ModelAndView formAddPessoa(){
-			ModelAndView mav = new ModelAndView("adicionarPessoa");
+		@GetMapping("/adicionarCliente")
+		public ModelAndView formAddCliente(){
+			ModelAndView mav = new ModelAndView("/adm/adicionarCliente");
 		 	mav.addObject(new Cliente());
 			return mav;
 		}
 		
 		//Adicionar pessoa
-		@PostMapping("/adicionarPessoa")
+		@PostMapping("/adicionarCliente")
 		public String AddCliente(Cliente p) {
 			this.clienteRepo.save(p);
-			return "redirect:/public/adicionadaComSucesso.html";
+			return "redirect:/adm/listarClientes";
 		}
 		
 		//Deletar Pessoa
@@ -54,7 +54,7 @@ public class ClienteController {
 			Cliente delCliente = clienteRepo.findById(id)
 				.orElseThrow(() -> new IllegalArgumentException("ID inválido" + id));
 			clienteRepo.delete(delCliente);
-			return new ModelAndView("redirect:/listarPessoas");
+			return new ModelAndView("redirect:/adm/listarClientes");
 		}
 		
 		//Editar pessoa
@@ -62,7 +62,7 @@ public class ClienteController {
 		public ModelAndView formEditcliente(@PathVariable("id") long id) {
 			Cliente editEl = clienteRepo.findById(id)
 				.orElseThrow(() -> new IllegalArgumentException("ID inválido" + id));
-			ModelAndView model = new ModelAndView("editarPessoa");
+			ModelAndView model = new ModelAndView("/adm/editarCliente");
 			model.addObject(editEl);
 			return model;
 		}
@@ -71,7 +71,7 @@ public class ClienteController {
 		@PostMapping("/editar/{id}")
 		public ModelAndView editCliente(@PathVariable("id") long id, Cliente cliente) {
 			this.clienteRepo.save(cliente);
-			return new ModelAndView("redirect:/listarPessoas");
+			return new ModelAndView("redirect:/adm/listarClientes");
 		}
 }
 
