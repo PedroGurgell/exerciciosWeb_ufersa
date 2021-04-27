@@ -23,7 +23,7 @@
 - [x] Fazer o deploy da aplicação no Heroku
 ### Projeto: Criar um site completo para loja de produtos de jardinagem - AgroPopShop
   ***
-  [**Descrição do projeto!**](https://projeto-pweb.herokuapp.com)
+  [**Descrição do projeto!**](https://drive.google.com/file/d/1ve5gJTI9TztgLL5Tz3MLVyMyOS4YBF6o/view)
   ***
   [**Clique aqui para vizualizar como está!**](https://projeto-pweb.herokuapp.com)
   ***
