@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <meta codigoSecreto="2011138773">
+    <title>Cadastrar Dependente</title>
+</head>
+<body>
+    <header class="p-3 bg-dark text-white">
+        <div class="container">
+          
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/adm" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+              <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+            </a>
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+              <li><a href="/adm" class="nav-link px-2 text-white">Home</a></li>
+              <li><a href="/adm/adicionarCliente" class="nav-link px-2 text-white">Adicionar Cliente</a></li>
+              <li><a href="/adm/adicionarProduto" class="nav-link px-2 text-white">Adicionar Produto</a></li>
+              <li><a href="/adm/listarClientes" class="nav-link px-2 text-white">Listar Clientes</a></li>
+              <li><a href="/adm/listarProdutos" class="nav-link px-2 text-white">Listar Produtos</a></li>
+            </ul>
+            <!--
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+              <input type="search" class="form-control form-control-dark" placeholder="Search...">
+            </form>
+            -->
+            <div class="text-end">
+              <button type="button" class="btn btn-outline-light me-2">Login</button>
+              <button type="button" class="btn btn-warning">Sign-up</button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+    <div class="container text-center col-md-8" >
+        
+        <h1 class="display-5 mt-5 mb-5">Formulário de cadastro de dependente</h1>
+        
+        <form method="POST" th:object="${dependente}" th:action="@{/adm/adicionarDependente/{id}(id=${cliente.id})}">
+            <div class=" col-md form-floating mt-3 mb-3">
+                <input th:field="*{nome}" type="text" class="form-control" id="floatingInput" placeholder="#">
+                <label for="floatingInput">Nome Completo</label>
+            </div>
+            <div class=" col-md form-floating mb-3">
+                <input th:field="*{email}" type="text" class="form-control" id="floatingInput" placeholder="#">
+                <label for="floatingInput">Email</label>
+            </div>
+            <div class="row g-2  mb-3">
+                <div class="col-md">
+                    <div class="form-floating">
+                      <select th:field="*{genero}" class="form-select" id="floatingSelectGrid" aria-label="Floating label select example" placeholder="#">
+                        <option   th:value="'Masculino'">Masculino</option>
+                        <option   th:value="'Feminino'">Feminino</option>
+                        <option   th:value="'Não informar'">Não informar</option>
+                      </select>
+                      <label for="floatingSelectGrid">Sexo</label>
+                    </div>
+                </div>
+             <div class="col md form-floating  mb-3">
+              <input th:field="*{dataNascimento}" type="text" class="form-control" id="floatingPassword" placeholder="#">
+              <label for="floatingPassword">Data Nascimento</label>
+          	</div>
+
+            <div class="row">
+                <div class="col mt-3 mb-5" align="center">
+                    <button type="reset" value="reset" class="col-sm btn btn-secondary">Limpar</button>
+                    <button type="submit" value="cadastrar" class="col-sm btn btn-success ">Cadastrar Dependente</button> 
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+<script th:src="@{/js/bootstrap.min.js}"></script>
+</body>
+</html>

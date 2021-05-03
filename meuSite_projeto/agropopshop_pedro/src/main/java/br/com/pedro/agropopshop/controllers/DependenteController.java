@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import br.com.pedro.agropopshop.model.Cliente;
 import br.com.pedro.agropopshop.model.Dependente;
+import br.com.pedro.agropopshop.repositories.ClienteRepository;
 import br.com.pedro.agropopshop.repositories.DependenteRepository;
 
 @Controller
@@ -20,26 +22,31 @@ public class DependenteController {
 	@Autowired
 	DependenteRepository dependenteRepo;
 	
+	@Autowired
+	ClienteRepository clienteRepo;
 	
-	//Transformar informações do form em novo objeto Cliente
-			@GetMapping("/adm/adicionarDependente")
-			public ModelAndView formAddDependente(){
-				ModelAndView mav = new ModelAndView("adm/adicionarCliente");
+	
+			@GetMapping("/adm/adicionarDependente/{id}")
+			public ModelAndView formAddDependente(@PathVariable("id") long id) {
+				ModelAndView mav = new ModelAndView("adm/adicionarDependente");
 			 	mav.addObject(new Dependente());
 				return mav;
 			}
-			
-			//Adicionar dependente
-			@PostMapping("/adm/adicionarDependente")
-			public String AddDependente(Dependente p) {
-				this.dependenteRepo.save(p);
-				return "redirect:/adm/listarDependentes";
+		
+			@PostMapping("/adm/adicionarDependente/{id}")
+			public ModelAndView addDependente(@PathVariable("id") long id, Dependente dependente){
+				Cliente clienteEl = clienteRepo.findById(id)
+				.orElseThrow(() -> new IllegalArgumentException("ID inválido" + id));
+				clienteEl.getOsDependentes().add(dependente);
+				return new ModelAndView("redirect:/adm/listarDependentes/"+id);
 			}
 			
 			//Listar dependentes
-			@GetMapping("/adm/listarDependentes")
-			public ModelAndView listarDependentes() {
-				List<Dependente> lista = dependenteRepo.findAll();
+			@GetMapping("/adm/listarDependentes/{id}")
+			public ModelAndView listarCliente(@PathVariable("id") long id) {
+				Cliente listaClienteEl = clienteRepo.findById(id)
+				.orElseThrow(() -> new IllegalArgumentException("ID inválido" + id));
+				List<Dependente> lista = listaClienteEl.getOsDependentes();
 				ModelAndView mav = new ModelAndView("adm/listarDependentes");
 				mav.addObject("dependentes",lista);
 				return mav;

@@ -2,13 +2,16 @@ package br.com.pedro.agropopshop.model;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
 import org.springframework.format.annotation.DateTimeFormat;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -33,6 +36,8 @@ import lombok.NoArgsConstructor;
 		private String endereco;
 		private String cep;
 		private String genero;
+		
+		private java.util.List<Dependente> osDependentes;
 		
 	    @Column(nullable = false)
 	    @DateTimeFormat(pattern = "dd/MM/yyyy")
@@ -80,6 +85,12 @@ import lombok.NoArgsConstructor;
 		}
 		public void setDataAtual(LocalDate dataAtual) {
 			this.dataAtual = dataAtual;
+		}
+		public java.util.List<Dependente> getOsDependentes() {
+			return osDependentes;
+		}
+		public void setOsDependentes(java.util.List<Dependente> osDependentes) {
+			this.osDependentes = osDependentes;
 		}
 
 		
