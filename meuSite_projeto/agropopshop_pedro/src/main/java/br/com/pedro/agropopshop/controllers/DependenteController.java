@@ -1,5 +1,6 @@
 package br.com.pedro.agropopshop.controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +25,8 @@ public class DependenteController {
 	
 	@Autowired
 	ClienteRepository clienteRepo;
-	
-	
+			
+		
 			@GetMapping("/adm/adicionarDependente/{id}")
 			public ModelAndView formAddDependente(@PathVariable("id") long id) {
 				ModelAndView mav = new ModelAndView("adm/adicionarDependente");
@@ -35,12 +36,14 @@ public class DependenteController {
 		
 			@PostMapping("/adm/adicionarDependente/{id}")
 			public ModelAndView addDependente(@PathVariable("id") long id, Dependente dependente){
+				List<Dependente> dependentes = new ArrayList<Dependente>();
+				dependentes.add(dependente);
 				Cliente clienteEl = clienteRepo.findById(id)
 				.orElseThrow(() -> new IllegalArgumentException("ID inválido" + id));
-				clienteEl.getOsDependentes().add(dependente);
+				clienteEl.setOsDependentes(dependentes);
 				return new ModelAndView("redirect:/adm/listarDependentes/"+id);
 			}
-			
+	
 			//Listar dependentes
 			@GetMapping("/adm/listarDependentes/{id}")
 			public ModelAndView listarCliente(@PathVariable("id") long id) {
@@ -51,7 +54,7 @@ public class DependenteController {
 				mav.addObject("dependentes",lista);
 				return mav;
 			}
-			
+	
 			//Deletar dependente
 			@GetMapping("/adm/removerDependente/{id}")
 			public ModelAndView deleteDependente(@PathVariable("id") long id) {

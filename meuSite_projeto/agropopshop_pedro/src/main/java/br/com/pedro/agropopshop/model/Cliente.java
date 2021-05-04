@@ -2,12 +2,15 @@ package br.com.pedro.agropopshop.model;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -37,7 +40,8 @@ import lombok.NoArgsConstructor;
 		private String cep;
 		private String genero;
 		
-		private java.util.List<Dependente> osDependentes;
+		@OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
+		private List<Dependente> osDependentes;
 		
 	    @Column(nullable = false)
 	    @DateTimeFormat(pattern = "dd/MM/yyyy")
@@ -86,12 +90,14 @@ import lombok.NoArgsConstructor;
 		public void setDataAtual(LocalDate dataAtual) {
 			this.dataAtual = dataAtual;
 		}
-		public java.util.List<Dependente> getOsDependentes() {
+		public List<Dependente> getOsDependentes() {
 			return osDependentes;
 		}
-		public void setOsDependentes(java.util.List<Dependente> osDependentes) {
+		public void setOsDependentes(List<Dependente> osDependentes) {
 			this.osDependentes = osDependentes;
 		}
+		
+
 
 		
 		
