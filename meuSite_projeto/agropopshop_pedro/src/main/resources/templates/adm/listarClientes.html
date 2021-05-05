@@ -68,10 +68,10 @@
             <td th:text="${cliente.cep}"></td>
             <td th:text="${#temporals.format(cliente.dataAtual, 'dd/MM/yyyy')}"></td>
             <td class="edit-table-people">
-            	<a th:href="@{/adm/adicionarDependente/{id}(id=${cliente.id})}"><i class="fas fa-user-edit"></i></a>
+            	<a th:href="@{/adm/adicionarDependente/{idCliente}(idCliente=${cliente.id})}"><i class="fas fa-user-edit"></i></a>
             </td>
             <td class="edit-table-people">
-            	<a th:href="@{/adm/listarDependentes/{id}(id=${cliente.id})}"><i class="fas fa-user-edit"></i></a>
+            	<a th:href="@{/adm/listarDependentes/{idCliente}(idCliente=${cliente.id})}"><i class="fas fa-user-edit"></i></a>
             </td>
             <td class="edit-table-people">
             	<a th:href="@{/adm/editar/{id}(id=${cliente.id})}"><i class="fas fa-user-edit"></i></a>

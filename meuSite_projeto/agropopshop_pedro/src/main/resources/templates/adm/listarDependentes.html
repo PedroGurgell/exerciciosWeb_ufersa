@@ -62,10 +62,10 @@
             <td th:text="${dependente.genero}"></td>
             <td th:text="${#temporals.format(dependente.dataNascimento, 'dd/MM/yyyy')}"></td>
             <td class="edit-table-people">
-            	<a th:href="@{/adm/editarDependente/{id}(id=${dependente.id})}"><i class="fas fa-user-edit"></i></a>
+            	<a th:href="@{/adm/editarDependente/{idDep}(idDep=${dependente.id})}"><i class="fas fa-user-edit"></i></a>
             </td>
             <td class="remove-table-people">
-            	<a th:href="@{/adm/removerDependente/{id}(id=${dependente.id})}"><i class="fas fa-times"></i></a>
+            	<a th:href="@{/adm/removerDependente/{idDep}(idDep=${dependente.id})}"><i class="fas fa-times"></i></a>
            	</td>
           </tr>
         </tbody>

@@ -40,7 +40,7 @@
         
         <h1 class="display-5 mt-5 mb-5">Editar dependente</h1>
         
-        <form method="POST" th:object="${dependente}" th:action="@{/adm/editarDependente/{id}(id=${dependente.id})}">
+        <form method="POST" th:object="${dependente}" th:action="@{/adm/editarDependente/{idDep}(idDep=${dependente.id})}">
             <div class=" col-md form-floating mt-3 mb-3">
                 <input th:field="*{nome}" type="text" class="form-control" id="floatingInput" placeholder="#">
                 <label for="floatingInput">Nome Completo</label>
