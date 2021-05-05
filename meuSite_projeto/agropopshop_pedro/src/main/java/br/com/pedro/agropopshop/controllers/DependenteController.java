@@ -26,6 +26,10 @@ public class DependenteController {
 	@Autowired
 	ClienteRepository clienteRepo;
 			
+			/*
+			 Editar/apagar dependentes por cliente >>
+			*/
+	
 			//Transformar informações do formulário em novo objeto
 			@GetMapping("/adm/adicionarDependente/{idCliente}")
 			public ModelAndView formAddDependente(@PathVariable("idCliente") long idCliente) {
@@ -36,6 +40,7 @@ public class DependenteController {
 			 	mav.addObject(new Dependente());
 				return mav;
 			}
+			
 			//Adicionar Novo Dependente
 			@PostMapping("/adm/adicionarDependente/{idCliente}")
 			public ModelAndView addDependente(@PathVariable("idCliente") long idCliente, Dependente dependente){
@@ -48,19 +53,9 @@ public class DependenteController {
 				dependente.setCliente(clienteEl);
 				clienteRepo.save(clienteEl);
 				return new ModelAndView("redirect:/adm/listarDependentes/"+idCliente);
-			}
-			
-			//Listar todos os dependentes
-			@GetMapping("/adm/listarDependentes")
-			public ModelAndView listarClientes() {
-				List<Dependente> lista = dependenteRepo.findAll();
-				ModelAndView mav = new ModelAndView("adm/listarDependentes");
-				mav.addObject("dependentes",lista);
-				return mav;
-			}
-			 
+			}		 
 		
-			//Listar dependentes
+			//Listar dependentes do cliente
 			@GetMapping("/adm/listarDependentes/{idCliente}")
 			public ModelAndView listarCliente(@PathVariable("idCliente") long idCliente) {
 				Cliente listaClienteEl = clienteRepo.findById(idCliente)
@@ -71,32 +66,84 @@ public class DependenteController {
 				return mav;
 				
 			}
-	
 			
 			//Deletar dependente
 			@GetMapping("/adm/removerDependente/{idDep}")
 			public ModelAndView deleteDependente(@PathVariable("idDep") long idDep) {
 				Dependente delDependente = dependenteRepo.findById(idDep)
 					.orElseThrow(() -> new IllegalArgumentException("ID inválido" + idDep));
+				long idOrigem = delDependente.getCliente().getId();
 				dependenteRepo.delete(delDependente);
-				return new ModelAndView("redirect:/adm/listarDependentes");
+				return new ModelAndView("redirect:/adm/listarDependentes/"+idOrigem);
 			}
 			
 			//Editar dependente
 			@GetMapping("/adm/editarDependente/{idDep}")
 			public ModelAndView formEditDependente(@PathVariable("idDep") long idDep ) {
-				Dependente editEl = dependenteRepo.findById(idDep)
+				Dependente editEldep = dependenteRepo.findById(idDep)
 					.orElseThrow(() -> new IllegalArgumentException("ID inválido" + idDep));
 				ModelAndView model = new ModelAndView("adm/editarDependente");
-				model.addObject(editEl);
+				model.addObject(editEldep);
 				return model;
 			}
 			
 			//Salvar dependente editado no Bando de dados
 			@PostMapping("/adm/editarDependente/{idDep}")
 			public ModelAndView editDependente(@PathVariable("idDep") long idDep , Dependente dependente) {	
-			this.dependenteRepo.save(dependente);
-			return new ModelAndView("redirect:/adm/listarDependentes");
+				Dependente editEldep = dependenteRepo.findById(idDep)
+					.orElseThrow(() -> new IllegalArgumentException("ID inválido" + idDep));
+				Cliente cliente = clienteRepo.findById(editEldep.getCliente().getId())
+						.orElseThrow(() -> new IllegalArgumentException("ID inválido"));
+				dependente.setCliente(cliente);
+				dependente.setId(editEldep.getId());
+				this.dependenteRepo.save(dependente);
+				return new ModelAndView("redirect:/adm/listarDependentes/" +cliente.getId());
+			}
+	
+			
+			/*
+			 Editar/apagar dependentes totais >>
+			*/
+			
+			//Listar todos os dependentes 
+			@GetMapping("/adm/listarDependentesTotal")
+			public ModelAndView listarClientes() {
+				List<Dependente> lista = dependenteRepo.findAll();
+				ModelAndView mav = new ModelAndView("adm/listarDependentesTotal");
+				mav.addObject("dependentes",lista);
+				return mav;
+			}
+			//Deletar dependente da lista geral
+			@GetMapping("/adm/removerDependenteTotal/{id}")
+			public ModelAndView delDependentes(@PathVariable("id") long id) {
+				Dependente delDependente = dependenteRepo.findById(id)
+					.orElseThrow(() -> new IllegalArgumentException("ID inválido" + id));
+				dependenteRepo.delete(delDependente);
+				return new ModelAndView("redirect:/adm/listarDependentesTotal");
 			}
 			
+			//Editar dependente da lista geral
+			@GetMapping("/adm/editarDependenteTotal/{id}")
+			public ModelAndView formEditDependentes(@PathVariable("id") long id ) {
+				Dependente editEldep = dependenteRepo.findById(id)
+					.orElseThrow(() -> new IllegalArgumentException("ID inválido" + id));
+				ModelAndView model = new ModelAndView("adm/editarDependenteTotal");
+				model.addObject(editEldep);
+				return model;
+			}
+			
+			//Salvar dependente editado no Bando de dados
+			@PostMapping("/adm/editarDependenteTotal/{id}")
+			public ModelAndView editDependentes(@PathVariable("id") long id , Dependente dependente) {	
+				Dependente editEldep = dependenteRepo.findById(id)
+					.orElseThrow(() -> new IllegalArgumentException("ID inválido" + id));
+				Cliente cliente = clienteRepo.findById(editEldep.getCliente().getId())
+						.orElseThrow(() -> new IllegalArgumentException("ID inválido"));
+				dependente.setCliente(cliente);
+				dependente.setId(editEldep.getId());
+				this.dependenteRepo.save(dependente);
+				return new ModelAndView("redirect:/adm/listarDependentesTotal");
+			}
+
+
 }
