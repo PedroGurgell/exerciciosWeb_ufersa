@@ -27,7 +27,7 @@ public class DependenteController {
 	ClienteRepository clienteRepo;
 			
 			/*
-			 Editar/apagar dependentes por cliente >>
+			 Listar/editar/apagar dependentes por cliente >>
 			*/
 	
 			//Transformar informações do formulário em novo objeto
@@ -102,7 +102,7 @@ public class DependenteController {
 	
 			
 			/*
-			 Editar/apagar dependentes totais >>
+			 Listar/editar/apagar dependentes totais >>
 			*/
 			
 			//Listar todos os dependentes 
