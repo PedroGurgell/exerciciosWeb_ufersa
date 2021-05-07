@@ -26,6 +26,7 @@
   [**Descrição do projeto!**](https://drive.google.com/file/d/1ve5gJTI9TztgLL5Tz3MLVyMyOS4YBF6o/view)
   ***
   [**Clique aqui para vizualizar como está!**](https://projeto-pweb.herokuapp.com)
+  [![alt text](previews/preview.jpg)](https://projeto-pweb.herokuapp.com)
   ***
 - Utilização da linguagem java com o framework Spring Boot para o back-end
 - Front-end com HTML e CSS(Bootstrap)
