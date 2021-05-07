@@ -34,5 +34,5 @@
 - [x] UserStory 1 - Adicione um novo cliente(CRUD cliente)
 - [x] UserStory 2 - Adicione um novo Produto(CRUD Produto)
 ## Projeto: Milestone 2
-- [ ] UserStory 3 - Adicionar um novo dependente de um cliente ao sistema.
+- [x] UserStory 3 - Adicionar um novo dependente de um cliente ao sistema.
 - [ ] UserStory 4 - Cadastrar pedidos e vendas.
