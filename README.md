@@ -21,13 +21,13 @@
 - [x] Projeto criado com database H2 
 - [x] Adaptar os .html com mudanças para a integração com a aplicação
 - [x] Fazer o deploy da aplicação no Heroku
+***
 ### Projeto: Criar um site completo para loja de produtos de jardinagem - AgroPopShop
-  ***
   [**Descrição do projeto!**](https://drive.google.com/file/d/1ve5gJTI9TztgLL5Tz3MLVyMyOS4YBF6o/view)
   ***
   ## [**Clique aqui para vizualizar como está!**](https://projeto-pweb.herokuapp.com)
   [![alt text](https://github.com/PedroGurgell/pweb_2020.2_pedroFelipe/blob/main/previews/previewProjeto.png?raw=true)](https://projeto-pweb.herokuapp.com)
-  ***
+***
 - Utilização da linguagem java com o framework Spring Boot para o back-end
 - Front-end com HTML e CSS(Bootstrap)
 - Deploy da aplicação no Heroku
