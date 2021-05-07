@@ -16,12 +16,12 @@ public class StartedController {
 	
 	@GetMapping("/client")
 	public String indexCliente(){
-		return "client/index.html";
+		return "client/homeCliente.html";
 	}
 			
 	@GetMapping("/adm")
 	public String indexAdm() {
-		return "adm/index.html";
+		return "adm/homeAdm.html";
 	}
 			
 }

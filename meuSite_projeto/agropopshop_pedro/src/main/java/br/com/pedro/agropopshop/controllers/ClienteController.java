@@ -20,29 +20,7 @@ public class ClienteController {
 		@Autowired
 		ClienteRepository clienteRepo;
 		
-		/* 
-		 Interação com Cliente >>
-		 */
-		
-		//Trnasformar informções do form em novo objeto Cliente(Pelo Cliente)
-		@GetMapping("/client/adicionarCliente")
-		public ModelAndView formAdicionarCliente(){
-			ModelAndView mav = new ModelAndView("client/adicionarCliente");
-			mav.addObject(new Cliente());
-			return mav;
-				}
-				
-		//Adicionar Cliente
-		@PostMapping("/client/adicionarCliente")
-		public String AdicionarCliente(Cliente p) {
-			this.clienteRepo.save(p);
-			return "redirect:/client";
-				}
-		
-		/* 
-		 Interação com ADM >>
-		 */
-		
+	
 		//Trnasformar informções do form em novo objeto Cliente
 		@GetMapping("/adm/listarClientes")
 		public ModelAndView listarClientes() {
@@ -92,5 +70,6 @@ public class ClienteController {
 			this.clienteRepo.save(cliente);
 			return new ModelAndView("redirect:/adm/listarClientes");
 		}
+		
 }
 

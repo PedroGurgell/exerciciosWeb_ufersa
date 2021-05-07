@@ -39,10 +39,9 @@
       </header>
 
     <div class="container-lg text-center" >
-        
+        <a th:href="@{/adm/listarDependentesTotal/}"class=" text-right"><button type="button" class="btn btn-warning">Todos os Dependentes</button></a>
         <h1 class="display-5 mt-5 mb-5 text-center">Clientes Cadastrados</h1>
-    
-        <table class="table table-hover">
+        <table class="table table-hover ">
         <thead>
           <tr>
             <th scope="col">ID</th>
@@ -59,6 +58,7 @@
           </tr>
         </thead>
         <tbody>
+        
           <tr th:each="cliente: ${clientes}">
             <th th:text="${cliente.id}" scope="row">1</th>
             <td th:text="${cliente.nome}"></td>
