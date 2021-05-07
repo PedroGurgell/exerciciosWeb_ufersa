@@ -4,13 +4,13 @@
  [**Repositório do professor**](https://github.com/pwebufersa/pweb_2020.2_xicoArrruda)
 ***
 ### Exercício 1: Criação de um index.html com um código secreto em um meta dado no documento.
-  [**Clique aqui para visualizar!**](https://pedrogurgell.github.io/pweb_2020.2_pedroFelipe/meuSite_exercicio1/)
+  [**Clique aqui para visualizar!**](https://pedrogurgell.github.io/pweb_2020.2_pedroFelipe/u1_exercicio1/)
 - [x] Criar arquivo index.html
 - [x] Insirir uma TAG meta no head do site com um código secreto
 - [x] Insirir uma uma imagem no body do site.
 - [x] Deixar responsivo 
 ### Exercício 2: Criação de um site multipage para treinar conceitos de aula
-  [**Clique aqui para visualizar!**](https://pedrogurgell.github.io/pweb_2020.2_pedroFelipe/meuSite_exercicio2/)
+  [**Clique aqui para visualizar!**](https://pedrogurgell.github.io/pweb_2020.2_pedroFelipe/u1_exercicio2/)
 - [x] Criação de 8 páginas .html, 1 pasta de imagens e 1 pasta com o style.css
 - [x] Seguir a estrutura repaçada
 - [x] Dar o próprio estilo ao site
@@ -34,5 +34,5 @@
 - [x] UserStory 1 - Adicione um novo cliente(CRUD cliente)
 - [x] UserStory 2 - Adicione um novo Produto(CRUD Produto)
 ## Projeto: Milestone 2
-- [ ] UserStory 3 - Adicionar um novo dependente de um cliente ao sistema.
+- [x] UserStory 3 - Adicionar um novo dependente de um cliente ao sistema.
 - [ ] UserStory 4 - Cadastrar pedidos e vendas.
