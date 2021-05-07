@@ -5,11 +5,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.pedro.agropopshop.model.Cliente;
+import br.com.pedro.agropopshop.model.Dependente;
 import br.com.pedro.agropopshop.repositories.ClienteRepository;
 
 @Controller
@@ -44,7 +46,38 @@ public class ClientClienteController {
 		public String AdicionarCliente(Cliente p) {
 			this.clienteRepo.save(p);
 			return "redirect:/client";
-				}
+			}
+		
+		//Deletar Cliente
+		@GetMapping("/client/remover/{idCliente}")
+		public ModelAndView deleteCliente(@PathVariable("idCliente") long id) {
+			Cliente delCliente = clienteRepo.findById(id)
+				.orElseThrow(() -> new IllegalArgumentException("ID inválido" + id));
+			clienteRepo.delete(delCliente);
+			return new ModelAndView("redirect:/client/listarClientes");
+		}
+				
+		//Editar Cliente
+		@GetMapping("/client/editar/{idCliente}")
+		public ModelAndView formEditcliente(@PathVariable("idCliente") long id) {
+			Cliente editEl = clienteRepo.findById(id)
+				.orElseThrow(() -> new IllegalArgumentException("ID inválido" + id));
+			ModelAndView model = new ModelAndView("client/editarCliente");
+			model.addObject(editEl);
+			return model;
+		}
+				
+		//Salvar cliente editado no Bando de dados
+		@PostMapping("/client/editar/{idCliente}")
+		public ModelAndView editCliente(@PathVariable("idCliente") long id, Cliente cliente) {
+			Cliente clienteID = clienteRepo.findById(id)
+				.orElseThrow(() -> new IllegalArgumentException("ID inválido" + id));
+			List<Dependente> lista = clienteID.getOsDependentes();
+			cliente.setId(clienteID.getId());
+			cliente.setOsDependentes(lista);
+			this.clienteRepo.save(cliente);
+			return new ModelAndView("redirect:/client/listarClientes");
+		}
 		
 		
 }

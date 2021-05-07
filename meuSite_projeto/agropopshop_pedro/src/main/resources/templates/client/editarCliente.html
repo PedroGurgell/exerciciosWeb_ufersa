@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
     <meta codigoSecreto="2011138773">
-    <title>Cadastrar Dependente</title>
+    <title>Cadastrar Cliente</title>
 </head>
 <body>
     <header class="p-3 bg-dark text-white">
@@ -36,9 +36,9 @@
 
     <div class="container text-center col-md-8" >
         
-        <h1 class="display-5 mt-5 mb-5">Formulário de cadastro de dependente</h1>
-        																					<!-- (id=${cliente.id}) -->
-        <form method="POST" th:object="${dependente}" th:action="@{/client/adicionarDependente/{idCliente}(idCliente=${cliente.id})}">
+        <h1 class="display-5 mt-5 mb-5">Editar cliente</h1>
+        
+        <form method="POST" th:object="${cliente}" th:action="@{/client/editar/{idCliente}(idCliente=${cliente.id})}">
             <div class=" col-md form-floating mt-3 mb-3">
                 <input th:field="*{nome}" type="text" class="form-control" id="floatingInput" placeholder="#">
                 <label for="floatingInput">Nome Completo</label>
@@ -46,6 +46,10 @@
             <div class=" col-md form-floating mb-3">
                 <input th:field="*{email}" type="text" class="form-control" id="floatingInput" placeholder="#">
                 <label for="floatingInput">Email</label>
+            </div>
+            <div class="col md form-floating  mb-3">
+                <input th:field="*{endereco}" type="text" class="form-control" id="floatingPassword" placeholder="#">
+                <label for="floatingPassword">Endereço</label>
             </div>
             <div class="row g-2  mb-3">
                 <div class="col-md">
@@ -57,20 +61,21 @@
                       </select>
                       <label for="floatingSelectGrid">Sexo</label>
                     </div>
+                  </div>
+                <div class="col-md">
+                  <div class="form-floating">
+                    <input th:field="*{cep}" type="text" class="form-control" id="floatingInput" placeholder="#">
+                    <label for="floatingInput">Cep</label>
+                  </div>
                 </div>
             </div>
-             <div class="col md form-floating  mb-3">
-              <input th:field="*{dataNascimento}" type="text" class="form-control" id="floatingPassword" placeholder="#">
-              <label for="floatingPassword">Data Nascimento</label>
-          	</div>
 
             <div class="row">
                 <div class="col mt-3 mb-5" align="center">
                     <button type="reset" value="reset" class="col-sm btn btn-secondary">Limpar</button>
-                    <button type="submit" value="cadastrar" class="col-sm btn btn-success ">Cadastrar Dependente</button> 
+                    <button type="submit" value="cadastrar" class="col-sm btn btn-success ">Cadastrar</button> 
                 </div>
             </div>
-            
 
         </form>
     </div>
