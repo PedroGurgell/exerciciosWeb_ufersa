@@ -71,6 +71,11 @@ import lombok.NoArgsConstructor;
 		public void setProfundidade(Double profundidade) {
 			this.profundidade = profundidade;
 		}
+		public Double getVolume() {
+			Double volume;
+			volume = (altura*largura*profundidade)/100;
+			return volume;
+		}
 		public Double getPeso() {
 			return peso;
 		}

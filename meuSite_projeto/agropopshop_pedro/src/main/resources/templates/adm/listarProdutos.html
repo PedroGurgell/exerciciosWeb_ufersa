@@ -53,6 +53,7 @@
             <th scope="col">Largura</th>
             <th scope="col">Profundidade</th>
             <th scope="col">Peso</th>
+            <th scope="col">Volume</th>
             <th scope="col">Preço</th>
             <th scope="col">Editar</th>
             <th scope="col">Excluir</th>
@@ -63,11 +64,12 @@
             <th th:text="${produto.id}" scope="row">1</th>
             <td th:text="${produto.nome}"></td>
             <td th:text="${produto.marca}" ></td>
-            <td th:text="${produto.altura}"></td>
-            <td th:text="${produto.largura}"></td>
-            <td th:text="${produto.profundidade}"></td>
-            <td th:text="${produto.peso}"></td>
-            <td th:text="${produto.preco}"></td>
+            <td th:text="${produto.altura} + 'cm'"></td>
+            <td th:text="${produto.largura} + 'cm'"></td>
+            <td th:text="${produto.profundidade} +'cm'"></td>
+            <td th:text="${produto.peso + 'kg'}"></td>
+            <td th:text="${produto.getVolume()} + 'm'"></td>
+            <td th:text="'R$ ' + ${produto.preco}"></td>
             <td class="edit-table-people">
             	<a th:href="@{/adm/editarProduto/{id}(id=${produto.id})}"><i class="fas fa-user-edit"></i></a>
             </td>
