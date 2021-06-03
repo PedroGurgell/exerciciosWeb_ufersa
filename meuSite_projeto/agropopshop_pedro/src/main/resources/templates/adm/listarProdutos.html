@@ -26,11 +26,7 @@
               <li><a href="/adm/listarClientes" class="nav-link px-2 text-white">Listar Clientes</a></li>
               <li><a href="/adm/listarProdutos" class="nav-link px-2 text-secondary">Listar Produtos</a></li>
             </ul>
-            <!--
-            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-              <input type="search" class="form-control form-control-dark" placeholder="Search...">
-            </form>
-            -->
+
             <div class="text-end">
               <button type="button" class="btn btn-outline-light me-2">Login</button>
               <button type="button" class="btn btn-warning">Sign-up</button>
@@ -41,8 +37,12 @@
 
     <div class="container-lg text-center" >
         
-        <h1 class="display-5 mt-5 mb-5 text-center">Produtos Cadastrados</h1>
-    
+        <h1 class="display-5 mt-5 mb-5 ">Produtos Cadastrados</h1>
+        
+        <form action="procurarProduto" method="POST" class="mb-3" style="width: 100%; display: inline-block;">
+            <input class="form-control me-2" style="max-width: 500px;display: inline;"    name="nomeProduto"  type="search" placeholder="Procurar produto" aria-label="Search">
+            <button class="btn btn-outline-success" style = " position: relative; top: -2px;"type="submit">Procurar</button>
+        </form>
         <table class="table table-hover">
         <thead>
           <tr>
@@ -80,7 +80,6 @@
         </tbody>
       </table>
    </div>
-
 
 <script th:src="@{/js/bootstrap.min.js}"></script>
 </body>

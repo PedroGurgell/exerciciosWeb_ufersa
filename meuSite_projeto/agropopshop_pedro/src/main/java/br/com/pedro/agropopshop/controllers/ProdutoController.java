@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import br.com.pedro.agropopshop.model.Produto;
 import br.com.pedro.agropopshop.repositories.ProdutoRepository;
@@ -27,7 +28,14 @@ public class ProdutoController {
 			mav.addObject("produtos",listaProdutos);
 			return mav;
 		}
-		
+		/*
+		@PostMapping("/procurarProduto")
+		public ModelAndView procurarP(@RequestParam("nomeProduto") String nomeProduto){
+			ModelAndView modelAndView = new ModelAndView("adm/listarProdutos");
+			modelAndView.addObject("produtos", produtoRepo.findProdutoByName(nomeProduto));
+			return modelAndView;
+		}
+		*/
 		//Trnasformar informções do form em novo objeto Pessoa
 		@GetMapping("/adm/adicionarProduto")
 		public ModelAndView formAddProduto(){
