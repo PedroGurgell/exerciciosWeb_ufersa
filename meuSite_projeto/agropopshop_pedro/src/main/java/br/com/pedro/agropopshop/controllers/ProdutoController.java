@@ -36,6 +36,14 @@ public class ProdutoController {
 			return modelAndView;
 		}
 		*/
+		
+		@PostMapping("/adm/procurarProduto")
+		public ModelAndView ProcurarProduto(@RequestParam("nomeProduto") String nomeProduto){
+			ModelAndView modelAndView = new ModelAndView("adm/listarProdutos");
+			modelAndView.addObject("produtos", produtoRepo.findByNomeContains(nomeProduto));
+			return modelAndView;
+		}
+		
 		//Trnasformar informções do form em novo objeto Pessoa
 		@GetMapping("/adm/adicionarProduto")
 		public ModelAndView formAddProduto(){
