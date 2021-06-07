@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+        <script	src="https://kit.fontawesome.com/f777b30381.js" crossorigin="anonymous"></script>
+        <meta codigoSecreto="2011138773">
+        <link rel="icon" href="/images/favicon.ico" type="image/x-icon"/>
+    <title>Lista de Clientes</title>
+</head>
+<body>
+    
+    <header class="p-3 bg-dark text-white">
+        <div class="container">
+          
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/adm" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+              <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+            </a>
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+              <li><a href="/adm" class="nav-link px-2 text-white">Home</a></li>
+              <li><a href="/adm/adicionarCliente" class="nav-link px-2 text-white">Adicionar Cliente</a></li>
+              <li><a href="/adm/adicionarProduto" class="nav-link px-2 text-white">Adicionar Produto</a></li>
+              <li><a href="/adm/listarClientes" class="nav-link px-2 text-white">Listar Clientes</a></li>
+              <li><a href="/adm/listarProdutos" class="nav-link px-2 text-secondary">Listar Produtos</a></li>
+            </ul>
+
+            <div class="text-end">
+              <button type="button" class="btn btn-outline-light me-2">Login</button>
+              <button type="button" class="btn btn-warning">Sign-up</button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+    <div class="container-lg text-center" >
+        
+        <h1 class="display-5 mt-5 mb-5 ">Produtos Cadastrados</h1>
+        
+        <form action="procurarProduto" method="POST" class="mb-3" style="width: 100%; display: inline-block;">
+            <input class="form-control me-2" style="max-width: 500px;display: inline;"    name="nomeProduto"  type="search" placeholder="Procurar produto" aria-label="Search">
+            <button class="btn btn-outline-success" style = " position: relative; top: -2px;"type="submit">Procurar</button>
+        </form>
+        <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nome do produto</th>
+            <th scope="col">Marca</th>
+            <th scope="col">Altura</th>
+            <th scope="col">Largura</th>
+            <th scope="col">Profundidade</th>
+            <th scope="col">Peso</th>
+            <th scope="col">Volume</th>
+            <th scope="col">Preço</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Excluir</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="produto: ${produtos}">
+            <th th:text="${produto.id}" scope="row">1</th>
+            <td th:text="${produto.nome}"></td>
+            <td th:text="${produto.marca}" ></td>
+            <td th:text="${produto.altura} + 'cm'"></td>
+            <td th:text="${produto.largura} + 'cm'"></td>
+            <td th:text="${produto.profundidade} +'cm'"></td>
+            <td th:text="${produto.peso + 'kg'}"></td>
+            <td th:text="${produto.getVolume()} + 'm'"></td>
+            <td th:text="'R$ ' + ${produto.preco}"></td>
+            <td class="edit-table-people">
+            	<a th:href="@{/adm/editarProduto/{id}(id=${produto.id})}"><i class="fas fa-user-edit"></i></a>
+            </td>
+            <td class="remove-table-people">
+            	<a th:href="@{/adm/removerProduto/{id}(id=${produto.id})}"><i class="fas fa-times"></i></a>
+           	</td>
+          </tr>
+        </tbody>
+      </table>
+   </div>
+
+<script th:src="@{/js/bootstrap.min.js}"></script>
+</body>
+</html>

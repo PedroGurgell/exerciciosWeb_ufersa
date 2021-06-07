@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+        <script	src="https://kit.fontawesome.com/f777b30381.js" crossorigin="anonymous"></script>
+        <meta codigoSecreto="2011138773">
+        <link rel="icon" href="/images/favicon.ico" type="image/x-icon"/>
+    <title>Lista de Dependentes</title>
+</head>
+<body>
+    
+    <header class="p-3 bg-dark text-white">
+        <div class="container">
+          
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/adm" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+              <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+            </a>
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+              <li><a href="/adm" class="nav-link px-2 text-white">Home</a></li>
+              <li><a href="/adm/adicionarCliente" class="nav-link px-2 text-white">Adicionar Cliente</a></li>
+              <li><a href="/adm/adicionarProduto" class="nav-link px-2 text-white">Adicionar Produto</a></li>
+              <li><a href="/adm/listarClientes" class="nav-link px-2 text-white">Listar Clientes</a></li>
+              <li><a href="/adm/listarProdutos" class="nav-link px-2 text-white">Listar Produtos</a></li>
+            </ul>
+            <!--
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+              <input type="search" class="form-control form-control-dark" placeholder="Search...">
+            </form>
+            -->
+            <div class="text-end">
+              <button type="button" class="btn btn-outline-light me-2">Login</button>
+              <button type="button" class="btn btn-warning">Sign-up</button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+    <div class="container-lg text-center" >
+        <a th:href="@{/adm/listarClientes/}"class=" text-right"><button type="button" class="btn btn-warning">Todos os Clientes</button></a>
+        <h1 class="display-5 mt-5 mb-5 text-center">Dependentes Cadastrados</h1>
+    
+        <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nome Completo</th>
+            <th scope="col">Email</th>
+            <th scope="col">Sexo</th>
+            <th scope="col">Data do Cadastro</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Excluir</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="dependente: ${dependentes}">
+            <th th:text="${dependente.id}" scope="row">1</th>
+            <td th:text="${dependente.nome}"></td>
+            <td th:href="'mailto:'+${dependente.email}" th:text="${dependente.email}" ></td>
+            <td th:text="${dependente.genero}"></td>
+            <td th:text="${#temporals.format(dependente.dataNascimento, 'dd/MM/yyyy')}"></td>
+            <td class="edit-table-people">
+            	<a th:href="@{/adm/editarDependenteTotal/{id}(id=${dependente.id})}"><i class="fas fa-user-edit"></i></a>
+            </td>
+            <td class="remove-table-people">
+            	<a th:href="@{/adm/removerDependenteTotal/{id}(id=${dependente.id})}"><i class="fas fa-times"></i></a>
+           	</td>
+          </tr>
+        </tbody>
+      </table>
+   </div>
+
+
+<script th:src="@{/js/bootstrap.min.js}"></script>
+</body>
+</html>
